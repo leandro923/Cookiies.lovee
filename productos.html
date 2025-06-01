@@ -6,7 +6,53 @@
   <title>Cookiies.lovee</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fcc9d0;
+      color: #ffffff;
+    }
 
+    header {
+      background-color: #a7120e;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 80px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 50px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #ffffff;
+      color: #a7120e;
+    }
+
+    
     body {
       background-color: #a7120e;
       font-family: 'Poppins', sans-serif;
@@ -94,7 +140,7 @@
     /* Carrito boton */
     #carritoBoton {
       position: fixed;
-      top: 20px;
+      top: 125px;
       right: 20px;
       width: 56px;
       height: 56px;
@@ -129,7 +175,7 @@
     /* Panel carrito */
     #carritoPanel {
       position: fixed;
-      top: 80px;
+      top: 190px;
       right: 20px;
       width: 320px;
       max-height: 480px;
@@ -204,6 +250,18 @@
   </style>
 </head>
 <body>
+  <header>
+    <div class="logo">
+      <img src="https://assets.onecompiler.app/43k86yw95/43kdtvn64/7558.png" alt="Logo Cookiies.lovee" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
   <main>
     <section class="productos">
       <h2>Nuestras Cookies</h2>
@@ -236,7 +294,7 @@
           <button class="btn-agregar" data-id="2" data-nombre="Clasicas Choco Blanco" data-precio="1400">Agregar</button>
         </div>
         <div class="producto">
-          <img src="https://assets.onecompiler.app/43k86yw95/43k86yyya/Captura%20de%20pantalla%202025-05-29%20203202.png" alt="Cookie de Limón" />
+          <img src="https://assets.onecompiler.app/43k86yw95/43k86yyya/Captura%20de%20pantalla%202025-05-29%20203140.png" alt="Cookie de Limón" />
           <h3>Cookie de Limón</h3>
           <p>Cookie con Limon🍪.</p>
           <span>$1.200</span>
@@ -333,7 +391,7 @@
           <button class="btn-agregar" data-id="15" data-nombre="Cookie de Bon o Bon" data-precio="2100">Agregar</button>
         </div>
         <div class="producto">
-          <img src="https://assets.onecompiler.app/43k86yw95/43k86yyya/Captura%20de%20pantalla%202025-05-29%20203140.png" alt="Cookie de Malvadisco y Choco" />
+          <img src="https://assets.onecompiler.app/43k86yw95/43k86yyya/Captura%20de%20pantalla%202025-05-29%20203202.png" alt="Cookie de Malvadisco y Choco" />
           <h3>Cookie de Malvadisco y Choco</h3>
           <p>Cookie con mucho mucho malvadisco y chocolate🍪.</p>
           <span>$1.900</span>
