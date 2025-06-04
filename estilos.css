@@ -75,3 +75,18 @@ footer {
   text-decoration: none;
   color: #a7120e;
 }
+
+
+@font-face {
+  font-family: 'Giaza';
+  src: url('./fonts/Giaza.otf') format('opentype'); /* O .ttf y 'truetype' si fuera necesario */
+}
+
+.titulo-con-giaza {
+  font-family: 'Giaza', serif;
+  font-size: 36px;
+}
+
+body {
+  font-family: 'DM Serif Display', serif;
+}
