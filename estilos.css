@@ -96,3 +96,10 @@ body {
   max-width: 120rem;
   margin: 0 auto;
  } 
+
+ .hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  }
