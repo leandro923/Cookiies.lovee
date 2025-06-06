@@ -183,6 +183,98 @@
 
 
 </head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookiies.lovee</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+    }
+
+    header {
+      background-color: #fdd;
+      padding: 10px 20px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Menu links */
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    /* Botón hamburguesa */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: #333;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    /* Oculta el checkbox */
+    #menu-toggle {
+      display: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #fdd;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      /* Mostrar el menú cuando el checkbox está marcado */
+      #menu-toggle:checked + .hamburger + .nav-links {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+</html>
 
 <body>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
@@ -197,6 +289,8 @@
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
+
+    
   </header>
 
   <section class="hero">
@@ -234,31 +328,6 @@
       <a href="https://wa.me/543434571408">WhatsApp</a>
     </div>
   </footer>
-  
-
-
-  <header>
-  <nav class="navbar">
-    <div class="logo">Cookiies.lovee</div>
-    <button class="hamburger" id="hamburger">
-      ☰
-    </button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#productos">Productos</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
-</header>
-
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
-
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
-</script>
 
 
 </body>
