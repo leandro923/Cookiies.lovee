@@ -92,34 +92,58 @@ body {
 }
 
 
-/* Estilos generales */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
 
-/* Contenedor principal */
-.container {
+
+
+/* Navbar base */
+.navbar {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdd;
+  padding: 10px 20px;
 }
 
-/* Cada sección de cookies */
-.cookie-box {
-  width: 300px; /* Tamaño fijo en pantallas grandes */
-  margin: 10px;
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: #f8f8f8;
-  border-radius: 10px;
-  text-align: center;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
-/* Responsive para pantallas chicas */
-@media (max-width: 600px) {
-  .cookie-box {
-    width: 90%; /* Más chico en celulares */
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Botón hamburguesa oculto en pantallas grandes */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive: cuando el ancho es menor a 768px (celulares) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #fdd;
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+  }
+
+  .nav-links.show {
+    display: flex;
   }
 }

@@ -164,6 +164,20 @@
   color: #ffe6e6;
 }
 
+    .Entregas {
+  max-width: 700px;
+  margin: 40px auto 0;
+  background-color: #a7120e;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.Entregas h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
   </style>
   
 
@@ -171,10 +185,8 @@
 </head>
 
 <body>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  
-<header>
+  <header>
     <div class="logo">
       <img src="https://assets.onecompiler.app/43k86yw95/43kdtvn64/7558.png" alt="Logo Cookiies.lovee" />
     </div>
@@ -206,7 +218,12 @@
     <section class="quienes-somos">
   <h2 style="font-family: 'Averia Serif Libre', serif;">¿Qué hacemos?</h2>
   <p style="font-family: 'roboto', roboto;">ELABORAMOS COOKIES CASERAS, IDEALES PARA REGALOS O PARA DARTE UN GUSTITO.</p>
-   
+ </section>
+<section class="Entregas">
+      <h2 style="font-family: 'Averia Serif Libre', serif;">Entregas</h2>
+      <p style="font-family: 'roboto', roboto;">📦ENTREGAMOS EN LA ESTACIÓN MARIANO ACOSTA Y MARCO PAZ</p>
+       </p style="font-family: 'roboto', roboto;"> 🚚CONSULTA POR TU ZONA ✨</p> 
+    </section>
 </section>
   </main>
   
@@ -218,8 +235,33 @@
     </div>
   </footer>
   
+
+
+  <header>
+  <nav class="navbar">
+    <div class="logo">Cookiies.lovee</div>
+    <button class="hamburger" id="hamburger">
+      ☰
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+
+
 </body>
 </html>
-
 
 
