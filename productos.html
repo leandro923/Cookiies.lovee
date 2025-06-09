@@ -666,12 +666,10 @@ body {
 <script type="module">
   import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
-  
-import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = 'https://vonvfsixywdamfsuofal.supabase.co'
-const supabaseKey = process.env.SUPABASE_KEY
-const supabase = createClient(supabaseUrl, supabaseKey)
+const supabaseUrl = 'https://vonvfsixywdamfsuofal.supabase.co';  // Reemplazá por la URL real
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZvbnZmc2l4eXdkYW1mc3VvZmFsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk0ODk1NDksImV4cCI6MjA2NTA2NTU0OX0.y8PO4vlh1j-wv9Nif-5AMeN2jsRu7_opsKYgdq3fZz0';               // Reemplazá por tu API Key pública
+
 
   async function mostrarStock() {
     const { data, error } = await supabase
