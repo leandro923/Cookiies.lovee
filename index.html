@@ -183,6 +183,52 @@
 }
 
 
+
+
+
+
+  form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 20px;
+  }
+
+  input[type="text"] {
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    width: 200px;
+  }
+
+  button {
+    background-color: #f08a5d;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  button:hover {
+    background-color: #b83b5e;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
+
+
   </style>
   
 
@@ -193,7 +239,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
   <header>
     <div class="logo">
-      <img src="https://assets.onecompiler.app/43k86yw95/43kdtvn64/7558.png" alt="Logo Cookiies.lovee" />
+      <img src="https://assets.onecompiler.app/43j8z4bnr/43m9gzhs4/LOGO%201.png" alt="Logo Cookiies.lovee" />
     </div>
     <nav>
       <ul>
@@ -206,7 +252,7 @@
 
   <section class="hero">
     <div class="hero-texto">
-      <h1 style="font-family: 'Averia Serif Libre', serif;">¡Bienvenid@ a Cookiies.lovee!</h1>
+      <h1 style="font-family: 'Averia Serif Libre', serif;">¡Bienvenid@ a Cookies love!</h1>
 
 
       <p style="font-family: 'roboto', roboto;">COOKIES IRRESISTIBLES, HECHAS CON AMOR ❤️</p>
@@ -216,21 +262,32 @@
 
   <main>
     <section class="presentacion">
-      <h2 style="font-family: 'Averia Serif Libre', serif;">¿Quiénes somos?</h2>
-      <p style="font-family: 'roboto', roboto;">HOLA! SOY MAGALI CUELI. DESDE LOS 13/14 AÑOS SIEMPRE ME ENCANTÓ HACER GALLETITAS DE DISTINTOS GUSTOS, FUI AGARRANDO EXPERIENCIA Y HOY DESPUÉS DE MUCHO TIEMPO ME DECIDÍ A ABRIR MI EMPRENDIMIENTO ❤️</p>
-       </p style="font-family: 'roboto', roboto;"> ES ALGO QUE DISFRUTO HACER Y ESPERO LES GUSTE ✨</p>
+      <h2 style="font-family: 'Averia Serif Libre', serif;">¿Quién soy?</h2>
+      <p style="font-family: 'roboto', roboto;">Mi nombre es Magalí Cueli, desde hace años fui probando distintas técnicas y opciones de cookies. Despues de un Timpo me decidí a abrir mi emprendimiento.</p>
+       </p style="font-family: 'roboto', roboto;"><b>¡Es algo que amo hacer y espero les guste!</b></p>
     </section>
     <section class="quienes-somos">
-  <h2 style="font-family: 'Averia Serif Libre', serif;">¿Qué hacemos?</h2>
-  <p style="font-family: 'roboto', roboto;">ELABORAMOS COOKIES CASERAS, IDEALES PARA REGALOS O PARA DARTE UN GUSTITO.</p>
+  <h2 style="font-family: 'Averia Serif Libre', serif;">¿De dónde somos?</h2>
+  <p style="font-family: 'roboto', roboto;">Somos de Mariano Acosta Merlo.</p>
  </section>
 <section class="Entregas">
       <h2 style="font-family: 'Averia Serif Libre', serif;">Entregas</h2>
-      <p style="font-family: 'roboto', roboto;">📦ENTREGAMOS EN LA ESTACIÓN MARIANO ACOSTA Y MARCO PAZ</p>
-       </p style="font-family: 'roboto', roboto;"> 🚚CONSULTA POR TU ZONA ✨</p> 
+      <p style="font-family: 'roboto', roboto;">📦Hacemos entregas en Marco Paz y Mariano Acosta</p>
+       </p style="font-family: 'roboto', roboto;"> ✨Tenemos pick up en el local "Las Bartolas" (Homero 3388)</p> 
+        </p style="font-family: 'roboto', roboto;"> <b>¡Si sos de otro lugar podemos llegar a coordinar tu entrega, consúltanos!</b> </p>
     </section>
 </section>
   </main>
+
+
+  <form action="/buscar" method="get">
+  <label for="busqueda" class="visually-hidden">Buscar cookies</label>
+  <input type="text" id="busqueda" name="q" placeholder="Buscar cookies..." />
+  <button type="submit">
+    🔍
+  </button>
+</form>
+
   
   <footer>
     <p>&copy; 2025 Cookiies.lovee</p>

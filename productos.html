@@ -136,6 +136,30 @@ body {
       background-color: #d4b8bb;
     }
 
+
+
+/* WhatsApp boton */
+    #WhatsAppBoton {
+      position: fixed;
+      top: 200px;
+      right: 20px;
+      width: 56px;
+      height: 56px;
+      border-radius: 65%;
+      box-shadow: 0 4px 10px #111(0,0,0,0.0);
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+
+    #WhatsAppBoton img {
+      width: 40px;
+      height: 40px;
+    }
+
+
     /* Carrito boton */
     #carritoBoton {
       position: fixed;
@@ -311,7 +335,7 @@ body {
 <body>
   <header>
     <div class="logo">
-      <img src="https://assets.onecompiler.app/43k86yw95/43kdtvn64/7558.png" alt="Logo Cookiies.lovee" />
+      <img src="https://assets.onecompiler.app/43j8z4bnr/43m9gzhs4/LOGO%201.png" alt="Logo Cookiies.lovee" />
     </div>
     <nav>
       <ul>
@@ -328,13 +352,10 @@ body {
       <h2 style="font-family: 'Averia Serif Libre', serif;">Nuestras Cookies</h2>
       <section style="background-color: #fcc9d0; padding: 20px; border-radius: 16px; margin: 40px auto; max-width: 1000px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
   <h2 style="color: #a7120e; font-family: 'Averia Serif Libre', serif; font-size: 1.6rem; margin-bottom: 15px;">
-    MÍNIMO 1 DÍA DE ANTICIPACIÓN PARA CADA PEDIDO<br>
-    <span style="font-size: 1rem; display: block; margin-top: 5px;">(IGUALMENTE SIEMPRE CONSULTAR SI HAY STOCK)</span>
+    MÍNIMO 2 DÍA DE ANTICIPACIÓN PARA CADA PEDIDO<br>
+    <span style="font-size: 1rem; display: block; margin-top: 5px;"><b>(IGUALMENTE SIEMPRE CONSULTAR SI HAY STOCK)</b></span>
   </h2>
   <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
-    <img src="https://assets.onecompiler.app/43k86yw95/43k86yyya/cookie-png-cookie-png-800.png" alt="cookies" style="width: 200px; border-radius: 12px;">
-    <img src="https://assets.onecompiler.app/43k86yw95/43k86yyya/R%20(2).png" alt="cookies" style="width: 200px; border-radius: 12px;">
-    <img src="https://assets.onecompiler.app/43k86yw95/43k86yyya/R%20(3).png" alt="cookies" style="width: 200px; border-radius: 12px;">
   </div>
 </section>
 
@@ -353,6 +374,7 @@ body {
         <h3>Cookie Clásicas de Choco</h3>
         <p>Cookie con chocolate.</p>
         <span>$1.400</span>
+         <p class="stock"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
         <button class="btn-agregar" data-id="1" data-nombre="Clasicas Choco" data-precio="1400">Agregar</button>
       </div>
       <div class="producto">
@@ -360,6 +382,7 @@ body {
         <h3>Cookie Clásicas de Choco Blanco</h3>
         <p>Cookie con mucho choco blanco.</p>
         <span>$1.400</span>
+         <p class="stock"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
         <button class="btn-agregar" data-id="2" data-nombre="Clasicas Choco Blanco" data-precio="1400">Agregar</button>
       </div>
       <div class="producto">
@@ -367,6 +390,7 @@ body {
         <h3>Cookie de Limón</h3>
         <p>Cookie con limón.</p>
         <span>$1.200</span>
+         <p class="stock"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
         <button class="btn-agregar" data-id="3" data-nombre="Cookie de Limón" data-precio="1200">Agregar</button>
       </div>
       <div class="producto">
@@ -374,6 +398,7 @@ body {
         <h3>Cookie de Oreo</h3>
         <p>Cookie con mucha Oreo.</p>
         <span>$1.400</span>
+         <p class="stock"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
         <button class="btn-agregar" data-id="4" data-nombre="Cookie de Oreo" data-precio="1400">Agregar</button>
       </div>
       <div class="producto">
@@ -381,6 +406,7 @@ body {
         <h3>Cookie de Chocolinas</h3>
         <p>Cookie con muchas chocolinas.</p>
         <span>$1.300</span>
+         <p class="stock"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
         <button class="btn-agregar" data-id="5" data-nombre="Cookie de Chocolinas" data-precio="1300">Agregar</button>
       </div>
       <div class="producto">
@@ -388,6 +414,7 @@ body {
         <h3>Cookie de Doble Choco</h3>
         <p>Cookie con mucho mucho choco.</p>
         <span>$1.600</span>
+         <p class="stock"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
         <button class="btn-agregar" data-id="6" data-nombre="Cookie de Doble Choco" data-precio="1600">Agregar</button>
       </div>
       <div class="producto">
@@ -395,6 +422,7 @@ body {
         <h3>Cookie de Rocklets</h3>
         <p>Cookie con rocklets.</p>
         <span>$1.400</span>
+         <p class="stock"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
         <button class="btn-agregar" data-id="7" data-nombre="Cookie de Rocklets" data-precio="1400">Agregar</button>
       </div>
       <div class="producto">
@@ -402,6 +430,7 @@ body {
         <h3>Cookie de Red Velvet</h3>
         <p>Cookie con red velvet.</p>
         <span>$1.500</span>
+         <p class="stock"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
         <button class="btn-agregar" data-id="8" data-nombre="Cookie de Red Velvet" data-precio="1500">Agregar</button>
       </div>
     </div>
@@ -420,6 +449,7 @@ body {
           <h3 style="font-family: 'Averia Serif Libre', serif;">Cookie de Membrillo</h3>
           <p style="font-family: 'roboto', roboto;">Cookie con mucho membrillo.</p>
           <span>$1.400</span>
+           <p class="stock"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
           <button class="btn-agregar" data-id="9" data-nombre="Cookie de Membrillo" data-precio="1400">Agregar</button>
         </div>
         <div class="producto">
@@ -427,6 +457,7 @@ body {
           <h3 style="font-family: 'Averia Serif Libre', serif;">Cookie de Dulce de Leche</h3>
           <p style="font-family: 'roboto', roboto;">Cookie con mucho mucho dulce de leche.</p>
           <span>$1.400</span>
+           <p class="stock"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
           <button class="btn-agregar" data-id="11" data-nombre="Cookie de Dulce de Leche" data-precio="1400">Agregar</button>
         </div>
         <div class="producto">
@@ -434,6 +465,7 @@ body {
           <h3 style="font-family: 'Averia Serif Libre', serif;">Cookie con Oreo Dentro</h3>
           <p style="font-family: 'roboto', roboto;">Cookie con mucha oreo dentro.</p>
           <span>$1.400</span>
+           <p class="stock"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
           <button class="btn-agregar" data-id="12" data-nombre="Cookie con Oreo Dentro" data-precio="1400">Agregar</button>
         </div>
         <div class="producto">
@@ -441,6 +473,7 @@ body {
           <h3 style="font-family: 'Averia Serif Libre', serif;">Cookie de Nutella</h3>
           <p style="font-family: 'roboto', roboto;">Cookie con mucha mucha nutella.</p>
           <span>$1.800</span>
+           <p class="stock"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
           <button class="btn-agregar" data-id="13" data-nombre="Cookie de Nutella" data-precio="1800">Agregar</button>
        </div>
     </div>
@@ -461,6 +494,7 @@ body {
           <h3 style="font-family: 'Averia Serif Libre', serif;">Cookie de Nutella y Choco</h3>
           <p style="font-family: 'roboto', roboto;">Cookie con mucha nutella y mucho chocolate.</p>
           <span>$2.100</span>
+           <p class="stock"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
           <button class="btn-agregar" data-id="14" data-nombre="Cookie de Nutella y Choco" data-precio="2100">Agregar</button>
         </div>
         <div class="producto">
@@ -468,6 +502,7 @@ body {
           <h3 style="font-family: 'Averia Serif Libre', serif;">Cookie de Bon o Bon</h3>
           <p style="font-family: 'roboto', roboto;">Cookie con mucho bon o bon.</p>
           <span>$2.100</span>
+           <p class="stock"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
           <button class="btn-agregar" data-id="15" data-nombre="Cookie de Bon o Bon" data-precio="2100">Agregar</button>
         </div>
         <div class="producto">
@@ -475,6 +510,7 @@ body {
           <h3 style="font-family: 'Averia Serif Libre', serif;">Cookie de Malvadisco y Choco</h3>
           <p style="font-family: 'roboto', roboto;">Cookie con mucho mucho malvadisco y chocolate.</p>
           <span>$1.900</span>
+           <p class="stock"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
           <button class="btn-agregar" data-id="16" data-nombre="Cookie de Malvadisco y Choco" data-precio="1900">Agregar</button>
         </div>
         <div class="producto">
@@ -482,6 +518,7 @@ body {
           <h3 style="font-family: 'Averia Serif Libre', serif;">Cookie de Franui/Frutillas Congeladas</h3>
           <p style="font-family: 'roboto', roboto;">Cookie con mucho franui/frutillas congeladas.</p>
           <span>$2.300</span>
+           <p class="stock"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
           <button class="btn-agregar" data-id="17" data-nombre="Cookie de Franui/Frutillas Congeladas" data-precio="2300">Agregar</button>
         </div>
         <div class="producto">
@@ -489,6 +526,7 @@ body {
           <h3 style="font-family: 'Averia Serif Libre', serif;">Cookie de Kinder</h3>
           <p style="font-family: 'roboto', roboto;">Cookie con mucho mucho Kinder.</p>
           <span>$2.400</span>
+           <p class="stock"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
           <button class="btn-agregar" data-id="18" data-nombre="Cookie de Kinder" data-precio="2400">Agregar</button>
         </div>
         </div>
@@ -496,6 +534,11 @@ body {
     </section>
   </main>
 
+
+  <!-- Icono WhatsApp -->
+  <div id="WhatsAppBoton">
+    <a href="https://wa.me/5491167203462" title="WhatsApp"><img src="https://assets.onecompiler.app/43j8z4bnr/43m9b33ds/whatsapp-logo-1%20(1).png" alt="WhatsApp" /></a>
+  </div>
   
   <!-- Icono carrito -->
   <div id="carritoBoton">
@@ -618,6 +661,40 @@ body {
       }
     });
   });
+</script>
+
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+  
+import { createClient } from '@supabase/supabase-js'
+
+const supabaseUrl = 'https://vonvfsixywdamfsuofal.supabase.co'
+const supabaseKey = process.env.SUPABASE_KEY
+const supabase = createClient(supabaseUrl, supabaseKey)
+
+  async function mostrarStock() {
+    const { data, error } = await supabase
+      .from('productos')
+      .select('id, stock');
+
+    if (error) {
+      console.error('Error al traer los datos de Supabase:', error);
+      return;
+    }
+
+    document.querySelectorAll('.btn-agregar').forEach(btn => {
+      const id = parseInt(btn.getAttribute('data-id'));
+      const producto = data.find(p => p.id === id);
+      if (producto) {
+        const divProducto = btn.closest('.producto');
+        const pStock = divProducto.querySelector('.stock');
+        pStock.textContent = `Stock: ${producto.stock}`;
+      }
+    });
+  }
+
+  mostrarStock();
 </script>
 
 
