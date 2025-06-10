@@ -370,7 +370,7 @@ body {
 
   <div class="acordeon-contenido">
     <div class="grid-productos">
-      <div class="producto">
+      <div class="producto" id="clasica-choco">
         <img src="https://assets.onecompiler.app/43j8z4bnr/43mam8tvf/clasica%20choco.png" alt="Clasicas Choco" />
         <h3>Clásica Choco</h3>
         <p>Masa de vainilla con chispas y pedacitos de chocolate.</p>
@@ -438,9 +438,9 @@ body {
       <div class="acordeon-contenido">
     <div class="grid-productos">
       <div class="producto">
-          <img src="https://assets.onecompiler.app/43k86yw95/43k86yyya/Captura%20de%20pantalla%202025-05-29%20203140.png" alt="Cookie de Membrillo" />
-          <h3 style="font-family: 'Averia Serif Libre', serif;">Cookie de Membrillo</h3>
-          <p style="font-family: 'roboto', roboto;">Cookie con mucho membrillo.</p>
+          <img src="https://assets.onecompiler.app/43j8z4bnr/43mam8tvf/membrillo.png" alt="Cookie de Membrillo" />
+          <h3 style="font-family: 'Averia Serif Libre', serif;">Membrillo</h3>
+          <p style="font-family: 'roboto', roboto;">Masa de vainilla rellena de membrillo.</p>
           <span class="precio" data-id="9">$1.400</span>
            <p class="stock"data-id="9"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
           <button class="btn-agregar" data-id="9" data-nombre="Cookie de Membrillo" data-precio="1400">Agregar</button>
@@ -691,6 +691,64 @@ body {
 
 </script>
 
+</script>
+
+<script>
+  // Obtener el parámetro "busqueda" de la URL
+  const params = new URLSearchParams(window.location.search);
+  const filtro = params.get('busqueda')?.toLowerCase() || '';
+
+  // Si hay filtro, aplicarlo
+  if (filtro) {
+    const productos = document.querySelectorAll('.producto');
+    productos.forEach(producto => {
+      const nombre = producto.querySelector('h3').textContent.toLowerCase();
+      const descripcion = producto.querySelector('p')?.textContent.toLowerCase() || '';
+      const coincide = nombre.includes(filtro) || descripcion.includes(filtro);
+      producto.style.display = coincide ? '' : 'none';
+    });
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const producto = document.querySelector(hash);
+      if (producto) {
+        // Si está en un acordeón cerrado, abrilo
+        const contenedor = producto.closest('.acordeon-contenido');
+        if (contenedor && contenedor.style.display === 'none') {
+          contenedor.style.display = 'block';
+        }
+
+        // Hacer scroll suave hacia el producto
+        setTimeout(() => {
+          producto.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+      }
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const producto = document.querySelector(hash);
+      if (producto) {
+        // Mostrar contenido si está en acordeón
+        const contenedor = producto.closest('.acordeon-contenido');
+        if (contenedor && contenedor.style.display === 'none') {
+          contenedor.style.display = 'block';
+        }
+
+        // Scroll hacia el producto
+        setTimeout(() => {
+          producto.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+      }
+    }
+  });
 </script>
 
 
