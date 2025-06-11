@@ -278,6 +278,7 @@
     </div>
   </section>
 
+  
   <main>
     <section class="presentacion">
       <h2 style="font-family: 'Averia Serif Libre', serif;">¿Quién soy?</h2>
@@ -298,6 +299,66 @@ Después de un tiempo me decidí a abrir mi emprendimiento.</p>
   </main>
 
   
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram Embeds</title>
+  <script async src="https://www.instagram.com/embed.js"></script>
+  <style>
+    body {
+      background-color: #fcc9d0;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 40px;
+      flex-wrap: wrap; /* Para que se acomoden en móviles */
+    }
+
+    .post {
+      background-color: white;
+      padding: 10px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 340px;
+    }
+
+    .instagram-media {
+      width: 100% !important;
+      max-width: 340px !important;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="post">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJDMivSvQlD/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; margin:0; padding:0;"></blockquote>
+    </div>
+    <div class="post">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJsX2mGvYXc/" data-instgrm-version="14" style="background:#FFF; border:0; margin:0; padding:0;"></blockquote>
+    </div>
+    
+  </div>
+
+  <script>
+    window.addEventListener("load", () => {
+      if (window.instgrm) {
+        window.instgrm.Embeds.process();
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+
   <footer>
     <p>&copy; 2025 Cookiies.lovee</p>
     <div class="redes">
@@ -310,18 +371,3 @@ Después de un tiempo me decidí a abrir mi emprendimiento.</p>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
