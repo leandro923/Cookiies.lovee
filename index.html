@@ -212,6 +212,21 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+
+
+.chat-burbuja {
+  background-color: white;
+  color: #a7120e;
+  padding: 12px 16px;
+  border-radius: 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 14px;
+  max-width: 250px;
+  transition: opacity 0.5s ease;
+  z-index: 10000;
+}
+
   </style>
 </head>
 
@@ -281,27 +296,49 @@
 </div>
 
 
-  <!-- Scripts -->
-  <script async src="https://www.instagram.com/embed.js"></script>
-  <script>
-    window.addEventListener("load", () => {
-      if (window.instgrm) window.instgrm.Embeds.process();
-    });
 
+ <!-- MASCOTA COOKIE -->
+<div class="cookie-mascota" title="¡Hola, soy tu cookie amiga!"></div>
 
+<div class="cookie-chat-bubble" id="chat-bubble">
+  ¡Bienvenid@ a Cookies Love! 🍪
+</div>
+
+<!-- Scripts -->
+<script async src="https://www.instagram.com/embed.js"></script>
+<script>
   window.addEventListener("load", () => {
     if (window.instgrm) window.instgrm.Embeds.process();
 
-    // Mostrar burbuja de bienvenida
     const bubble = document.getElementById("chat-bubble");
-    bubble.style.display = "block";
+    const mensajes = [
+      "¡Bienvenid@ a Cookies Love! 🍪",
+      "Con tu compra mayor a $10.000 te llevas tus cookies en cajita",
+      "Recordá mencionarnos en tu historia cuando retires tus cookies!",
+      "¿Cuál es tu favorita? 🤔",
+      "Seguinos en Instagram 💕"
+    ];
 
-    // Ocultar después de 6 segundos
-    setTimeout(() => {
-      bubble.style.display = "none";
-    }, 6000);
+    let i = 0;
+
+    function mostrarMensaje() {
+      if (i >= mensajes.length) return;
+
+      bubble.textContent = mensajes[i];
+      bubble.style.display = "block";
+
+      setTimeout(() => {
+        bubble.style.display = "none";
+        i++;
+        setTimeout(mostrarMensaje, 8000); // Espera antes del próximo mensaje
+      }, 6000); // Tiempo que se muestra cada mensaje (5 segundos)
+    }
+
+    mostrarMensaje();
   });
 </script>
+
+
 
   </script>
 

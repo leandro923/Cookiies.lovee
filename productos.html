@@ -329,6 +329,73 @@ body {
 }
 
 
+
+
+    /* MASCOTA COOKIE */
+    .cookie-mascota {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 90px;
+      height: 90px;
+      background-image: url('https://assets.onecompiler.app/43j8z4bnr/43mam8tvf/cookie%20tierna.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 9999;
+      transition: transform 0.3s ease;
+      animation: saltito 2s infinite;
+      cursor: pointer;
+    }
+
+    .cookie-mascota:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes saltito {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+
+
+    .cookie-chat-bubble {
+  position: fixed;
+  bottom: 130px;
+  right: 20px;
+  background-color: #ffffff;
+  color: #a7120e;
+  padding: 12px 18px;
+  border-radius: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  max-width: 250px;
+  font-size: 14px;
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+.chat-burbuja {
+  background-color: white;
+  color: #a7120e;
+  padding: 12px 16px;
+  border-radius: 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 14px;
+  max-width: 250px;
+  transition: opacity 0.5s ease;
+  z-index: 10000;
+}
+
   </style>
 
 </head>
@@ -688,6 +755,60 @@ body {
   actualizarProductos();
 </script>
 
+<!-- MASCOTA COOKIE -->
+<div class="cookie-mascota" title="¡Hola, soy tu cookie amiga!"></div>
+
+<div class="cookie-chat-bubble" id="chat-bubble">
+  ¡Bienvenid@ a Cookies Love! 🍪
+</div>
+
+<!-- Scripts -->
+<script async src="https://www.instagram.com/embed.js"></script>
+
+<script>
+  const bubble = document.getElementById("chat-bubble");
+
+  function mostrarMensajeCookie(texto) {
+    bubble.innerText = texto;
+    bubble.style.display = "block";
+    setTimeout(() => {
+      bubble.style.display = "none";
+    }, 6000);
+  }
+
+  // Mostrar mensajes al entrar
+  window.addEventListener("load", () => {
+    const mensajes = [
+      "Con tu compra mayor a $10.000 te llevas tus cookies en cajita",
+      "Recordá mencionarnos en tu historia cuando retires tus cookies",
+      
+    ];
+
+    let i = 0;
+    function mostrarSiguiente() {
+      if (i < mensajes.length) {
+        mostrarMensajeCookie(mensajes[i]);
+        i++;
+        setTimeout(mostrarSiguiente, 9000); // tiempo entre mensajes
+      }
+    }
+
+    mostrarSiguiente();
+  });
+
+  // Mostrar mensaje al agregar producto al carrito
+  document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("btn-agregar")) {
+      mostrarMensajeCookie("¡Agregaste una cookie riquísima al carrito!");
+    }
+  });
+</script>
+
+
+
+  
+</script>
+
 
 </script>
 
@@ -728,6 +849,13 @@ body {
       }
     }
   });
+
+
+  
+
+</script>
+
+  
 </script>
 
 <script>
@@ -749,6 +877,7 @@ body {
       }
     }
   });
+
 </script>
 
 
