@@ -1,4 +1,5 @@
 {
+ 
  "name": "Cookiies.lovee",
  "short_name": "Cookiies.lov",
  "start_url": "https://cookiielovee.netlify.app",
@@ -14,5 +15,8 @@
    "type": "image/png"
   }
  ],
+ 
  "scope": "https://cookiielovee.netlify.app"
 }
+
+<link rel="manifest" href="/manifest.json"> <script src="/app.js"></script>
