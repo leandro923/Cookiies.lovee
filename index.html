@@ -262,7 +262,7 @@
 
     <section class="quienes-somos">
       <h2 style="font-family: 'Averia Serif Libre', serif;">¿De dónde somos?</h2>
-      <p>Somos de Mariano Acosta Merlo.</p>
+      <p>Somos de Mariano Acosta, Merlo.</p>
     </section>
 
     <section class="Entregas">
@@ -292,7 +292,7 @@
   <div class="cookie-mascota" title="¡Hola, soy tu cookie amiga!"></div>
 
   <div class="cookie-chat-bubble" id="chat-bubble">
-  ¡Bienvenid@ a Cookies Love! 🍪
+  ¡Bienvenid@ a Cookies Love!
 </div>
 
 
@@ -301,7 +301,7 @@
 <div class="cookie-mascota" title="¡Hola, soy tu cookie amiga!"></div>
 
 <div class="cookie-chat-bubble" id="chat-bubble">
-  ¡Bienvenid@ a Cookies Love! 🍪
+  ¡Bienvenid@ a Cookies Love!
 </div>
 
 <!-- Scripts -->
@@ -311,17 +311,17 @@
     if (window.instgrm) window.instgrm.Embeds.process();
 
     const bubble = document.getElementById("chat-bubble");
-    const mensajes = [
-      "¡Bienvenid@ a Cookies Love! 🍪",
+    const mensajes =[
+      "¡Bienvenid@ a Cookies Love!",
       "Con tu compra mayor a $10.000 te llevas tus cookies en cajita",
-      "Recordá mencionarnos en tu historia cuando retires tus cookies!",
-      "¿Cuál es tu favorita? 🤔",
+      "¡Recordá mencionarnos en tu historia cuando retires tus cookies!",
+      "¿Cuál es tu favorita?",
       "Seguinos en Instagram 💕"
     ];
 
     let i = 0;
 
-    function mostrarMensaje() {
+    function mostrarMensaje(){
       if (i >= mensajes.length) return;
 
       bubble.textContent = mensajes[i];
