@@ -252,55 +252,69 @@
 
 <style>
 
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px; /* menos padding para que quede más ajustado */
+  background: #b01010; /* el rojo que estás usando */
+  position: relative;
+}
 
-  .logo img {
-    height: 40px;
-  }
+.logo img {
+  height: 40px;
+}
 
+/* El botón hamburguesa empuja hacia la derecha */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto; /* empuja el botón a la derecha */
+  color: white; /* para que el icono se vea */
+}
+
+/* menú horizontal para desktop */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0 0 0 20px;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
   nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px; /* para que quede casi en la esquina */
+    background: #b01010;
+    border: 1px solid #880000;
+    padding: 10px;
+    display: none;
+    width: 150px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   }
 
-  nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: bold;
+  nav ul.show {
+    display: flex;
   }
 
   .menu-toggle {
-    display: none;
-    font-size: 28px;
-    background: none;
-    border: none;
-    cursor: pointer;
+    display: block;
   }
+}
 
-  /* Responsive: cuando el ancho es menor a 768px */
-  @media (max-width: 768px) {
-    nav ul {
-      flex-direction: column;
-      position: absolute;
-      top: 60px; /* ajusta según el header */
-      right: 20px;
-      padding: 10px;
-      display: none; /* oculto por defecto */
-      width: 150px;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-
-    nav ul.show {
-      display: flex; /* se muestra cuando tenga la clase show */
-    }
-
-    .menu-toggle {
-      display: block;
-    }
-  }
 </style>
 
 <script>
