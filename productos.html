@@ -427,14 +427,89 @@ body {
       color: #880e0a;
     }
 
+
+   header {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background: #b01010;
+  position: relative; /* necesario para posicionar el botón dentro */
+}
+
+.logo img {
+  height: 40px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+
+  /* fijarlo a la esquina superior derecha */
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}
+
+/* Menú desktop */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: #b01010;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    width: 150px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    margin-left: auto;
+  }
+}
+
   </style>
 
 </head>
 <body>
   <header>
     <div class="logo">
-      <img src="https://assets.onecompiler.app/43j8z4bnr/43m9gzhs4/LOGO%201.png" alt="Logo Cookiies.lovee" />
+      <img src="https://uploads.onecompiler.io/43j8z4bnr/43n8hyc53/LOGO%201.png" alt="Logo Cookiies.lovee" />
     </div>
+
+    <!-- Botón hamburguesa -->
+    <button class="menu-toggle" aria-label="Menú">&#9776;</button>
+
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -442,8 +517,8 @@ body {
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
-    
   </header>
+
   <main>
 
     <section class="productos">
@@ -632,7 +707,7 @@ body {
 
   <!-- Icono WhatsApp -->
   <div id="WhatsAppBoton">
-    <a href="https://wa.me/5491167203462" title="WhatsApp"><img src="https://assets.onecompiler.app/43j8z4bnr/43m9b33ds/whatsapp-logo-1%20(1).png" alt="WhatsApp" /></a>
+    <a href="https://wa.me/5491167203462" title="WhatsApp"><img src="https://uploads.onecompiler.io/43j8z4bnr/43n22adf8/whatsapp-logo-1%20(1).png" alt="WhatsApp" /></a>
   </div>
   
   <!-- Icono carrito -->
@@ -920,6 +995,17 @@ body {
       <a href="https://forms.gle/qg2HXSs2BV5MXb257">Suscríbete</a>
     </div>
   </footer>
+
+
+
+  <script>
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('nav ul');
+
+  toggleBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+</script>
 
 </body>
 </html>
