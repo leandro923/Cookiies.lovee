@@ -231,19 +231,88 @@
 </head>
 
 <body>
+<header>
+  <div class="logo">
+    <img src="https://assets.onecompiler.app/43j8z4bnr/43m9gzhs4/LOGO%201.png" alt="Logo Cookiies.lovee" />
+  </div>
 
-  <header>
-    <div class="logo">
-      <img src="https://assets.onecompiler.app/43j8z4bnr/43m9gzhs4/LOGO%201.png" alt="Logo Cookiies.lovee" />
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="productos.html">Productos</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Botón hamburguesa -->
+  <button class="menu-toggle" aria-label="Abrir menú">
+    &#9776; <!-- icono hamburguesa -->
+  </button>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="productos.html">Productos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+
+
+  .logo img {
+    height: 40px;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Responsive: cuando el ancho es menor a 768px */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      position: absolute;
+      top: 60px; /* ajusta según el header */
+      right: 20px;
+      padding: 10px;
+      display: none; /* oculto por defecto */
+      width: 150px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    nav ul.show {
+      display: flex; /* se muestra cuando tenga la clase show */
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navUl = document.querySelector('nav ul');
+
+  menuToggle.addEventListener('click', () => {
+    navUl.classList.toggle('show');
+  });
+
+  //
+</script>
 
   <section class="hero">
     <div class="hero-texto">
