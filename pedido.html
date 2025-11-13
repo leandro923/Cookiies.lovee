@@ -13,6 +13,9 @@
       color: #a7120e;
       margin: 0;
       padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
@@ -26,6 +29,8 @@
     }
 
     main {
+      flex: 1;
+      width: 100%;
       max-width: 500px;
       margin: 40px auto;
       background-color: #a7120e;
@@ -33,6 +38,7 @@
       border-radius: 16px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
       color: white;
+      box-sizing: border-box;
     }
 
     label {
@@ -46,20 +52,18 @@
     select,
     input[type="number"] {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       border-radius: 8px;
       border: none;
       margin-bottom: 20px;
       font-size: 1rem;
+      box-sizing: border-box;
     }
 
-    input[type="number"] {
-    -mozappearance: textfield; /* Quitar flechas en Firefox */
-    }
-
+    
     input[type="number"]::-webkit-inner-spin-button,
     input[type="number"]::-webkit-outer-spin-button {
-      -webkit-appearance: none; /* Quitar flechas en Chrome */
+      -webkit-appearance: none;
       margin: 0;
     }
 
@@ -74,19 +78,66 @@
       border-radius: 12px;
       cursor: pointer;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: background-color 0.3s, color 0.3s;
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
     }
 
     button:hover {
       background-color: #fcc9d0;
       color: #a7120e;
+      transform: scale(1.02);
     }
 
     footer {
       text-align: center;
-      padding: 30px 20px;
+      padding: 20px;
       color: #a7120e;
       font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* ✅ RESPONSIVE */
+    @media (max-width: 768px) {
+      header {
+        font-size: 1.5rem;
+        padding: 12px 10px;
+      }
+
+      main {
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 12px;
+      }
+
+      label {
+        font-size: 1rem;
+      }
+
+      input, select, button {
+        font-size: 1rem;
+      }
+
+      button {
+        padding: 12px;
+      }
+
+      footer {
+        font-size: 0.9rem;
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        font-size: 1.3rem;
+      }
+
+      main {
+        padding: 15px;
+      }
+
+      button {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -136,11 +187,8 @@
       `*Producto:* ${producto}%0A` +
       `*Cantidad:* ${cantidad}`;
 
-    // Cambiá este número por el WhatsApp del negocio con código país, sin espacios ni signos.
-    const numeroWhatsApp = '+54 9 11 6720-3462';
-
-    const urlWhatsApp = `https://wa.me/${5491167203462}?text=${mensaje}`;
-
+    const numeroWhatsApp = '+5491167203462';
+    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
     window.open(urlWhatsApp, '_blank');
   });
 </script>
