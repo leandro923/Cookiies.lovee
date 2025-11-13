@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cookiies.lovee</title>
@@ -338,7 +340,7 @@ body {
       right: 20px;
       width: 90px;
       height: 90px;
-      background-image: url('https://assets.onecompiler.app/43j8z4bnr/43mam8tvf/cookie%20tierna.png');
+      background-image: url('cookietierna.png');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -427,89 +429,14 @@ body {
       color: #880e0a;
     }
 
-
-   header {
-  display: flex;
-  align-items: center;
-  padding: 10px 15px;
-  background: #b01010;
-  position: relative; /* necesario para posicionar el botón dentro */
-}
-
-.logo img {
-  height: 40px;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: white;
-
-  /* fijarlo a la esquina superior derecha */
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-}
-
-/* Menú desktop */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}
-
-/* Responsive para móviles */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    background: #b01010;
-    padding: 10px;
-    border-radius: 5px;
-    display: none;
-    width: 150px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  }
-
-  nav ul.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  nav {
-    margin-left: auto;
-  }
-}
-
   </style>
 
 </head>
 <body>
   <header>
     <div class="logo">
-      <img src="https://uploads.onecompiler.io/43j8z4bnr/43n8hyc53/LOGO%201.png" alt="Logo Cookiies.lovee" />
+      <img src="LOGO1.png" alt="Logo Cookiies.lovee" />
     </div>
-
-    <!-- Botón hamburguesa -->
-    <button class="menu-toggle" aria-label="Menú">&#9776;</button>
-
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -517,8 +444,8 @@ nav ul li a {
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
+    
   </header>
-
   <main>
 
     <section class="productos">
@@ -544,7 +471,7 @@ nav ul li a {
   <div class="acordeon-contenido">
     <div class="grid-productos">
       <div class="producto" id="clasica-choco">
-        <img src="https://assets.onecompiler.app/43j8z4bnr/43mam8tvf/clasica%20choco.png" alt="Clasicas Choco" />
+        <img src="clasicachoco.jpg" alt="Clasicas Choco" />
         <h3>Clásica Choco</h3>
         <p>Masa de vainilla con chispas y pedacitos de chocolate.</p>
         <span class="precio" data-id="1">$1.400</span>
@@ -552,7 +479,7 @@ nav ul li a {
         <button class="btn-agregar" data-id="1" data-nombre="Clasicas Choco" data-precio="1400">Agregar</button>
       </div>
       <div class="producto">
-        <img src="https://uploads.onecompiler.io/43j8z4bnr/43n8hyc53/calsica%20choco%20blanco.png" alt="Clasicas Choco Blanco" />
+        <img src="Clasicachocoblanco.jpg" alt="Clasicas Choco Blanco" />
         <h3>Clásica Choco Blanco</h3>
         <p>Masa de vainilla con choco blanco.</p>
         <span class="precio" data-id="2">$1.400</span>
@@ -560,15 +487,7 @@ nav ul li a {
         <button class="btn-agregar" data-id="2" data-nombre="Clasicas Choco Blanco" data-precio="1400">Agregar</button>
       </div>
       <div class="producto">
-        <img src="https://assets.onecompiler.app/43j8z4bnr/43mam8tvf/limon.png" alt="Cookie de Limón" />
-        <h3>Limón</h3>
-        <p>Masa de limón con poca cantidad de chispas de choco blanco.</p>
-        <span class="precio" data-id="3">$1.200</span>
-         <p class="stock"data-id="3"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-        <button class="btn-agregar" data-id="3" data-nombre="Cookie de Limón" data-precio="1200">Agregar</button>
-      </div>
-      <div class="producto">
-        <img src="https://assets.onecompiler.app/43j8z4bnr/43mam8tvf/OREO.png" alt="Cookie de Oreo" />
+        <img src="oreo.jpg" alt="Cookie de Oreo" />
         <h3>Oreo</h3>
         <p>Masa de vainilla con chocolate negro y blanco, con oreo triturada.</p>
         <span class="precio" data-id="4">$1.400</span>
@@ -576,7 +495,7 @@ nav ul li a {
         <button class="btn-agregar" data-id="4" data-nombre="Cookie de Oreo" data-precio="1400">Agregar</button>
       </div>
       <div class="producto">
-        <img src="https://assets.onecompiler.app/43j8z4bnr/43mam8tvf/Logotipo%20Emprendimiento%20Minimalista%20Blanco.png" alt="Cookie de Doble Choco" />
+        <img src="Doblechoco.jpg" alt="Cookie de Doble Choco" />
         <h3>Doble Choco</h3>
         <p>Masa de chocolate y chispas de chocolate negro.</p>
         <span class="precio" data-id="6">$1.600</span>
@@ -584,7 +503,7 @@ nav ul li a {
         <button class="btn-agregar" data-id="6" data-nombre="Doble Choco" data-precio="1600">Agregar</button>
       </div>
       <div class="producto">
-        <img src="https://assets.onecompiler.app/43j8z4bnr/43mam8tvf/Rocklets.png" alt="Cookie de Rocklets" />
+        <img src="Rocklets.jpg" alt="Cookie de Rocklets" />
         <h3>Rocklets</h3>
         <p>Masa de vainilla con rocklets y chispas de chocolate.</p>
         <span class="precio" data-id="7">$1.400</span>
@@ -592,7 +511,7 @@ nav ul li a {
         <button class="btn-agregar" data-id="7" data-nombre="Cookie de Rocklets" data-precio="1400">Agregar</button>
       </div>
       <div class="producto">
-        <img src="https://assets.onecompiler.app/43j8z4bnr/43mam8tvf/RED%20VELVET.png" alt="Cookie de Red Velvet" />
+        <img src="Redvelvet.jpg" alt="Cookie de Red Velvet" />
         <h3>Red Velvet</h3>
         <p>Masa de red velvet, con pedacitos y chispas de choco blanco.</p>
         <span class="precio" data-id="8">$1.500</span>
@@ -611,7 +530,7 @@ nav ul li a {
       <div class="acordeon-contenido">
     <div class="grid-productos">
       <div class="producto">
-          <img src="https://assets.onecompiler.app/43j8z4bnr/43mam8tvf/membrillo.png" alt="Cookie de Membrillo" />
+          <img src="membrillo.jpg" alt="Cookie de Membrillo" />
           <h3 style="font-family: 'Averia Serif Libre', serif;">Membrillo</h3>
           <p style="font-family: 'roboto', roboto;">Masa de vainilla rellena de membrillo.</p>
           <span class="precio" data-id="9">$1.400</span>
@@ -619,7 +538,7 @@ nav ul li a {
           <button class="btn-agregar" data-id="9" data-nombre="Cookie de Membrillo" data-precio="1400">Agregar</button>
         </div>
         <div class="producto">
-          <img src="https://uploads.onecompiler.io/43j8z4bnr/43n8hyc53/dulce%20de%20leche.png" alt="Cookie de Dulce de Leche" />
+          <img src="dulcedeleche.jpg" alt="Cookie de Dulce de Leche" />
           <h3 style="font-family: 'Averia Serif Libre', serif;">Dulce de Leche</h3>
           <p style="font-family: 'roboto', roboto;">Masa de vainilla, rellena de dulce de leche.</p>
          <span class="precio" data-id="11">$1.400</span>
@@ -627,7 +546,7 @@ nav ul li a {
           <button class="btn-agregar" data-id="11" data-nombre="Cookie de Dulce de Leche" data-precio="1400">Agregar</button>
         </div>
         <div class="producto">
-          <img src="https://assets.onecompiler.app/43j8z4bnr/43mam8tvf/OREO%20DENTRO.png" alt="Cookie con Oreo Dentro" />
+          <img src="OreoDentro.jpg" alt="Cookie con Oreo Dentro" />
           <h3 style="font-family: 'Averia Serif Libre', serif;">Oreo Dentro</h3>
           <p style="font-family: 'roboto', roboto;">Masa de vainilla con una oreo por dentro</p>
           <span class="precio" data-id="12">$1.400</span>
@@ -635,7 +554,7 @@ nav ul li a {
           <button class="btn-agregar" data-id="12" data-nombre="Cookie con Oreo Dentro" data-precio="1400">Agregar</button>
         </div>
         <div class="producto">
-          <img src="https://uploads.onecompiler.io/43j8z4bnr/43n8hyc53/NUTELLA.png" alt="Cookie de Nutella" />
+          <img src="nutella.jpg" alt="Cookie de Nutella" />
           <h3 style="font-family: 'Averia Serif Libre', serif;">Nutella</h3>
           <p style="font-family: 'roboto', roboto;">Masa de vainilla, rellena de nutella.</p>
          <span class="precio" data-id="13">$1.800</span>
@@ -656,7 +575,7 @@ nav ul li a {
       <div class="acordeon-contenido">
     <div class="grid-productos">
       <div class="producto">
-          <img src="https://assets.onecompiler.app/43j8z4bnr/43mam8tvf/nutella%20y%20choco.png" alt="Cookie de Nutella y Choco" />
+          <img src="Nutellaychoco.jpg" alt="Cookie de Nutella y Choco" />
           <h3 style="font-family: 'Averia Serif Libre', serif;">Nutella y Choco</h3>
           <p style="font-family: 'roboto', roboto;">Masa de vainilla con pedacitos de chocolate, rellena de nutella.</p>
           <span class="precio" data-id="14">$2.100</span>
@@ -664,7 +583,7 @@ nav ul li a {
           <button class="btn-agregar" data-id="14" data-nombre="Cookie de Nutella y Choco" data-precio="2100">Agregar</button>
         </div>
         <div class="producto">
-          <img src="https://assets.onecompiler.app/43j8z4bnr/43mam8tvf/bon%20o%20bon.png" alt="Cookie de Bon o Bon" />
+          <img src="BonoBon.jpg" alt="Cookie de Bon o Bon" />
           <h3 style="font-family: 'Averia Serif Libre', serif;">Bon o Bon</h3>
           <p style="font-family: 'roboto', roboto;">Masa de vainilla con chispas blancas, rellenas de un Bon o Bon.</p>
         <span class="precio" data-id="15">$2.100</span>
@@ -672,7 +591,7 @@ nav ul li a {
           <button class="btn-agregar" data-id="15" data-nombre="Cookie de Bon o Bon" data-precio="2100">Agregar</button>
         </div>
         <div class="producto">
-          <img src="https://assets.onecompiler.app/43j8z4bnr/43mam8tvf/malvavisco.png" alt="Cookie de Malvadisco y Choco" />
+          <img src="Malvaviscoychoco.jpg" alt="Cookie de Malvadisco y Choco" />
           <h3 style="font-family: 'Averia Serif Libre', serif;">Malvavisco y choco</h3>
           <p style="font-family: 'roboto', roboto;">Masa de vainilla y chipas negras, rellenas de malvavisco y chocolate.</p>
           <span class="precio" data-id="16">$1.900</span>
@@ -680,7 +599,7 @@ nav ul li a {
           <button class="btn-agregar" data-id="16" data-nombre="Cookie de Malvavisco y Choco" data-precio="1900">Agregar</button>
         </div>
         <div class="producto">
-          <img src="https://assets.onecompiler.app/43j8z4bnr/43mam8tvf/franui.png" alt="Cookie de Franui/Frutillas Congeladas" />
+          <img src="franui.jpg" alt="Cookie de Franui/Frutillas Congeladas" />
           <h3 style="font-family: 'Averia Serif Libre', serif;">Franui/Frutillas Congeladas</h3>
           <p style="font-family: 'roboto', roboto;">Masa de vainilla con choco negro y blanco, rellena y decorada con franui.</p>
           <span class="precio" data-id="17">$2.300</span>
@@ -688,7 +607,7 @@ nav ul li a {
           <button class="btn-agregar" data-id="17" data-nombre="Cookie de Franui/Frutillas Congeladas" data-precio="2300">Agregar</button>
         </div>
         <div class="producto">
-          <img src="https://assets.onecompiler.app/43j8z4bnr/43mam8tvf/kinder.png" alt="Cookie de Kinder" />
+          <img src="kinder.jpg" alt="Cookie de Kinder" />
           <h3 style="font-family: 'Averia Serif Libre', serif;">Cookie de Kinder</h3>
           <p style="font-family: 'roboto', roboto;">Masa de vainilla con choco negro y blanco. Rellena de kinder, nutella y chocolate. Decorada con chocolate semi amargo por arriba y una barrita kinder en el centro.</p>
           <span class="precio" data-id="18">$2.400</span>
@@ -707,12 +626,12 @@ nav ul li a {
 
   <!-- Icono WhatsApp -->
   <div id="WhatsAppBoton">
-    <a href="https://wa.me/5491167203462" title="WhatsApp"><img src="https://uploads.onecompiler.io/43j8z4bnr/43n22adf8/whatsapp-logo-1%20(1).png" alt="WhatsApp" /></a>
+    <a href="https://wa.me/5491167203462" title="WhatsApp"><img src="whats.webp" alt="WhatsApp" /></a>
   </div>
   
   <!-- Icono carrito -->
   <div id="carritoBoton">
-    <img src="https://assets.onecompiler.app/43k86yw95/43k86yyya/57576376.png" alt="Carrito" />
+    <img src="carrito.png" alt="Carrito" />
     <span id="contadorCarrito">0</span>
   </div>
 
@@ -991,21 +910,10 @@ nav ul li a {
     <p>&copy; 2025 Cookiies.lovee</p>
     <div class="redes">
       <a href="https://instagram.com/Cookiies.lovee">Instagram</a>
-      <a href="https://wa.me/5491167203462">WhatsApp</a>
-      <a href="https://forms.gle/qg2HXSs2BV5MXb257">Suscríbete</a>
+      <a href="https://wa.me/543434571408">WhatsApp</a>
+      <a href="https://forms.gle/ZeRpw8yw6ZmgMMG39">Suscríbete</a>
     </div>
   </footer>
-
-
-
-  <script>
-  const toggleBtn = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('nav ul');
-
-  toggleBtn.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
-  });
-</script>
 
 </body>
 </html>
