@@ -371,15 +371,6 @@
   <div class="cookie-mascota"></div>
   <div class="cookie-chat-bubble" id="chat-bubble">¡Bienvenid@ a Cookies Love!</div>
 
-  <!-- AVISO TEMPORAL -->
-  <div id="tempNoticeModal" role="dialog" aria-modal="true">
-    <div class="card">
-      <h3>No estamos tomando pedidos</h3>
-      <p>Por el momento estamos cerrados para nuevos pedidos. ¡Volvemos el 15 de Diciembre!</p>
-      <button class="btn" id="tempNoticeClose">Entendido</button>
-    </div>
-  </div>
-
   <script async src="https://www.instagram.com/embed.js"></script>
   <script>
     // Instagram
@@ -410,10 +401,6 @@
     }
     mostrarMensaje();
 
-    // Modal aviso temporal
-    document.getElementById('tempNoticeClose').addEventListener('click', () => {
-      document.getElementById('tempNoticeModal').style.display = 'none';
-    });
 
     // Menú hamburguesa
     const toggle = document.getElementById("menu-toggle");
@@ -424,4 +411,5 @@
   </script>
 </body>
 </html>
+
 
