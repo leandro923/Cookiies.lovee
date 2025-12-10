@@ -150,6 +150,15 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
+    .post blockquote.instagram-media {
+      /* CLAVE: Fuerza al elemento de Instagram a no exceder el ancho del contenedor. */
+      max-width: 100% !important; 
+      /* Opcional pero recomendado para que el código incrustado se adapte mejor */
+      width: 100% !important;
+      /* Asegura que no haya márgenes que saquen el contenido */
+      margin: 0 auto !important; 
+    }
+
     footer {
       background-color: #a7120e;
       text-align: center;
@@ -411,6 +420,7 @@
   </script>
 </body>
 </html>
+
 
 
 
