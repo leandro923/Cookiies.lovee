@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿
+/*index copia guardado*/
+ /* --- BOTÓN HAMBURGUESA --- */
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
@@ -22,17 +26,6 @@
             overflow-x: hidden;
         }
 
-        /* --- NIEVE MÁS NOTABLE --- */
-        .nieve-contenedor {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1001; /* Por encima de todo pero sin bloquear clics */
-        }
-
         header {
             background-color: #a7120e;
             display: flex;
@@ -44,29 +37,6 @@
             top: 0;
             z-index: 1000;
         }
-
-
-
-        /* --- CARTEL DE OFERTA NAVIDEÑA --- */
-        .cartel-oferta {
-            background-color: #fcc9d0;
-            color: #a7120e;
-            text-align: center;
-            padding: 12px;
-            font-weight: 800;
-            font-size: 1.1rem;
-            /* Cambié '4px dashed' por 'none' para quitar los cuadraditos */
-            border-bottom: none;
-            position: relative;
-            z-index: 999;
-            text-transform: uppercase;
-        }
-
-            .cartel-oferta span {
-                color: #a7120e;
-                font-size: 1.3rem;
-            }
-
 
         .logo img {
             height: 70px;
@@ -94,6 +64,7 @@
                 color: #a7120e;
             }
 
+        /* --- BOTÓN HAMBURGUESA --- */
         .menu-toggle {
             display: none;
             flex-direction: column;
@@ -159,6 +130,11 @@
                 color: #ffffff;
             }
 
+            .presentacion p, .quienes-somos p, .Entregas p {
+                font-size: 1rem;
+                color: #ffe6e6;
+            }
+
         .container {
             display: flex;
             justify-content: center;
@@ -175,7 +151,21 @@
             padding: 15px;
             width: 100%;
             max-width: 350px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
+
+            .post blockquote.instagram-media {
+
+                /* CLAVE: Fuerza al elemento de Instagram a no exceder el ancho del contenedor. */
+                      max-width: 100% !important;
+
+                /* Opcional pero recomendado para que el código incrustado se adapte mejor */
+                      width: 100% !important;
+
+                /* Asegura que no haya márgenes que saquen el contenido */
+                      margin: 0 auto !important;
+
+            }
 
         footer {
             background-color: #a7120e;
@@ -184,6 +174,28 @@
             border-top: 3px solid #ffffff;
         }
 
+            footer p {
+                margin: 0;
+                font-weight: bold;
+                color: #ffffff;
+            }
+
+        .redes {
+            margin-top: 10px;
+        }
+
+            .redes a {
+                margin: 0 10px;
+                text-decoration: none;
+                color: #ffffff;
+                font-weight: bold;
+                transition: color 0.3s;
+            }
+
+                .redes a:hover {
+                    color: #fcc9d0;
+                }
+
         /* --- COOKIE MASCOTA --- */
         .cookie-mascota {
             position: fixed;
@@ -191,12 +203,19 @@
             right: 20px;
             width: 80px;
             height: 80px;
-            background-image: url('cookietiernanavidad.png');
+            background-image: url('cookietierna.png');
             background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             z-index: 9999;
+            transition: transform 0.3s ease;
             animation: saltito 2s infinite;
             cursor: pointer;
         }
+
+            .cookie-mascota:hover {
+                transform: scale(1.1);
+            }
 
         @keyframes saltito {
             0%, 100% {
@@ -222,8 +241,64 @@
             max-width: 250px;
             font-size: 14px;
             display: none;
+            animation: fadeIn 0.5s ease;
         }
 
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- AVISO TEMPORAL --- */
+        #tempNoticeModal {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 99999;
+        }
+
+            #tempNoticeModal .card {
+                background: #a7120e;
+                padding: 28px;
+                max-width: 90%;
+                border-radius: 14px;
+                box-shadow: 0 6px 30px rgba(255, 255, 255, 0.3);
+                text-align: center;
+                color: #fff;
+            }
+
+            #tempNoticeModal h3 {
+                margin-bottom: 10px;
+                font-size: 20px;
+            }
+
+            #tempNoticeModal p {
+                margin-bottom: 20px;
+                font-size: 16px;
+            }
+
+            #tempNoticeModal .btn {
+                padding: 10px 18px;
+                border-radius: 8px;
+                border: none;
+                cursor: pointer;
+                background: #fcc9d0;
+                color: #a7120e;
+                font-weight: bold;
+                font-size: 15px;
+            }
+
+        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             nav ul {
                 display: none;
@@ -247,17 +322,24 @@
             .hero-texto h1 {
                 font-size: 1.8rem;
             }
+
+            .presentacion, .quienes-somos, .Entregas {
+                padding: 20px;
+            }
+
+            .cookie-mascota {
+                width: 65px;
+                height: 65px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <canvas id="nieve" class="nieve-contenedor"></canvas>
-
     <header>
         <div class="logo">
-            <img src="LOGO1navidad.png" alt="Logo Cookiies.lovee" />
+            <img src="LOGO1.png" alt="Logo Cookiies.lovee" />
         </div>
 
         <div class="menu-toggle" id="menu-toggle">
@@ -272,10 +354,6 @@
             </ul>
         </nav>
     </header>
-
-    <div class="cartel-oferta">
-        ¡PROMO ESPECIAL! 🍪 5 Cookies x <span>$9.000</span>
-    </div>
 
     <section class="hero">
         <div class="hero-texto">
@@ -324,83 +402,41 @@
 
     <script async src="https://www.instagram.com/embed.js"></script>
     <script>
-        // --- SCRIPT DE NIEVE VISIBLE ---
-        const canvas = document.getElementById("nieve");
-        const ctx = canvas.getContext("2d");
-        let w, h;
-        let particles = [];
+    // Instagram
+    window.addEventListener("load", () => {
+      if (window.instgrm) window.instgrm.Embeds.process();
+    });
 
-        function resize() {
-            w = canvas.width = window.innerWidth;
-            h = canvas.height = window.innerHeight;
-        }
+    // Chat de cookie
+    const bubble = document.getElementById("chat-bubble");
+    const mensajes = [
+      "¡Bienvenid@ a Cookies Love!",
+      "Con tu compra mayor a $10.000 te llevas tus cookies en cajita",
+      "¡Recordá mencionarnos en tu historia cuando retires tus cookies!",
+      "¿Cuál es tu favorita?",
+      "Seguinos en Instagram 💕"
+    ];
+    let i = 0;
 
-        window.addEventListener("resize", resize);
-        resize();
+    function mostrarMensaje() {
+      if (i >= mensajes.length) return;
+      bubble.textContent = mensajes[i];
+      bubble.style.display = "block";
+      setTimeout(() => {
+        bubble.style.display = "none";
+        i++;
+        setTimeout(mostrarMensaje, 8000);
+      }, 6000);
+    }
+    mostrarMensaje();
 
-        for (let i = 0; i < 100; i++) {
-            particles.push({
-                x: Math.random() * w,
-                y: Math.random() * h,
-                r: Math.random() * 4 + 1, // Copos un poco más grandes
-                d: Math.random() * 1
-            });
-        }
 
-        function draw() {
-            ctx.clearRect(0, 0, w, h);
-            ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
-            ctx.beginPath();
-            for (let i = 0; i < particles.length; i++) {
-                let p = particles[i];
-                ctx.moveTo(p.x, p.y);
-                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, true);
-            }
-            ctx.fill();
-            update();
-        }
-
-        function update() {
-            for (let i = 0; i < particles.length; i++) {
-                let p = particles[i];
-                p.y += Math.cos(p.d) + 1 + p.r / 2;
-                p.x += Math.sin(p.d) * 2;
-                if (p.x > w + 5 || p.x < -5 || p.y > h) {
-                    particles[i] = { x: Math.random() * w, y: -10, r: p.r, d: p.d };
-                }
-            }
-        }
-        setInterval(draw, 33);
-
-        // --- CHAT DE COOKIE ---
-        const bubble = document.getElementById("chat-bubble");
-        const mensajes = [
-            "¡Bienvenid@ a Cookies Love!",
-            "Con tu compra mayor a $10.000 te llevas tus cookies en cajita",
-            "¡Recordá mencionarnos en tu historia!",
-            "Seguinos en Instagram 💕",
-            "¿Cuál es tu favorita?"
-        ];
-        let msgIdx = 0;
-
-        function mostrarMensaje() {
-            if (msgIdx >= mensajes.length) msgIdx = 0;
-            bubble.textContent = mensajes[msgIdx];
-            bubble.style.display = "block";
-            setTimeout(() => {
-                bubble.style.display = "none";
-                msgIdx++;
-                setTimeout(mostrarMensaje, 8000);
-            }, 6000);
-        }
-        mostrarMensaje();
-
-        // Menú hamburguesa
-        const toggle = document.getElementById("menu-toggle");
-        const menu = document.getElementById("menu");
-        toggle.addEventListener("click", () => {
-            menu.classList.toggle("active");
-        });
+    // Menú hamburguesa
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
     </script>
 </body>
 </html>

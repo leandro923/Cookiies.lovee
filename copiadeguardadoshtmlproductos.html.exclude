@@ -469,7 +469,6 @@
 
 
 
-
         /* --- RESPONSIVE --- */
         .menu-toggle {
             display: none;
@@ -521,23 +520,6 @@
                 height: 65px;
             }
         }
-
-
-
-
-
-        /* --- BADGE PROMO --- */
-        .badge-promo {
-            background-color: #a7120e;
-            color: #fff;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 4px 8px;
-            border-radius: 8px;
-            display: inline-block;
-            margin-bottom: 6px;
-        }
-
     </style>
 
 </head>
@@ -595,12 +577,11 @@
                     <div class="grid-productos">
                         <div class="producto" id="clasica-choco">
                             <img src="clasicachoco.jpg" alt="Clasicas Choco" />
-                            <div class="badge-promo">APLICA EN LA PROMO</div>
                             <h3>Clásica Choco</h3>
                             <p>Masa de vainilla con chispas y pedacitos de chocolate.</p>
                             <span class="precio" data-id="1">$1.400</span>
                             <p class="stock" data-id="1"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="1" data-nombre="Clasicas Choco" data-precio="1400" data-oferta="true">Agregar</button>
+                            <button class="btn-agregar" data-id="1" data-nombre="Clasicas Choco" data-precio="1400">Agregar</button>
                         </div>
                         <div class="producto">
                             <img src="Clasicachocoblanco.jpg" alt="Clasicas Choco Blanco" />
@@ -612,12 +593,11 @@
                         </div>
                         <div class="producto">
                             <img src="oreo.jpg" alt="Cookie de Oreo" />
-                            <div class="badge-promo">APLICA EN LA PROMO</div>
                             <h3>Oreo</h3>
                             <p>Masa de vainilla con chocolate negro y blanco, con oreo triturada.</p>
                             <span class="precio" data-id="4">$1.400</span>
                             <p class="stock" data-id="4"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="4" data-nombre="Cookie de Oreo" data-precio="1400" data-oferta="true">Agregar</button>
+                            <button class="btn-agregar" data-id="4" data-nombre="Cookie de Oreo" data-precio="1400">Agregar</button>
                         </div>
                         <div class="producto">
                             <img src="Doblechoco.jpg" alt="Cookie de Doble Choco" />
@@ -637,12 +617,11 @@
                         </div>
                         <div class="producto">
                             <img src="Redvelvet.jpg" alt="Cookie de Red Velvet" />
-                            <div class="badge-promo">APLICA EN LA PROMO</div>
                             <h3>Red Velvet</h3>
                             <p>Masa de red velvet, con pedacitos y chispas de choco blanco.</p>
                             <span class="precio" data-id="8">$1.500</span>
                             <p class="stock" data-id="8"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="8" data-nombre="Cookie de Red Velvet" data-precio="1500" data-oferta="true">Agregar</button>
+                            <button class="btn-agregar" data-id="8" data-nombre="Cookie de Red Velvet" data-precio="1500">Agregar</button>
                         </div>
                     </div>
                 </div>
@@ -681,12 +660,11 @@
                         </div>
                         <div class="producto">
                             <img src="nutella.jpg" alt="Cookie de Nutella" />
-                            <div class="badge-promo">APLICA EN LA PROMO</div>
                             <h3 style="font-family: 'Averia Serif Libre', serif;">Nutella</h3>
                             <p style="font-family: 'roboto', roboto;">Masa de vainilla, rellena de nutella.</p>
                             <span class="precio" data-id="13">$1.800</span>
                             <p class="stock" data-id="13"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="13" data-nombre="Cookie de Nutella" data-precio="1800" data-oferta="true">Agregar</button>
+                            <button class="btn-agregar" data-id="13" data-nombre="Cookie de Nutella" data-precio="1800">Agregar</button>
                         </div>
                     </div>
                 </div>
@@ -711,12 +689,11 @@
                         </div>
                         <div class="producto">
                             <img src="BonoBon.jpg" alt="Cookie de Bon o Bon" />
-                            <div class="badge-promo">APLICA EN LA PROMO</div>
                             <h3 style="font-family: 'Averia Serif Libre', serif;">Bon o Bon</h3>
                             <p style="font-family: 'roboto', roboto;">Masa de vainilla con chispas blancas, rellenas de un Bon o Bon.</p>
                             <span class="precio" data-id="15">$2.100</span>
                             <p class="stock" data-id="15"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="15" data-nombre="Cookie de Bon o Bon" data-precio="2100" data-oferta="true">Agregar</button>
+                            <button class="btn-agregar" data-id="15" data-nombre="Cookie de Bon o Bon" data-precio="2100">Agregar</button>
                         </div>
                         <div class="producto">
                             <img src="Malvaviscoychoco.jpg" alt="Cookie de Malvadisco y Choco" />
@@ -783,18 +760,11 @@
             listaCarrito.innerHTML = "";
             let total = 0;
             let cantidadTotal = 0;
-            let cantidadOferta = 0;
-            let sumaOfertaNormal = 0;
 
             for (const id in carrito) {
                 const item = carrito[id];
                 total += item.precio * item.cantidad;
                 cantidadTotal += item.cantidad;
-
-                if (item.oferta) {
-                    cantidadOferta += item.cantidad;
-                    sumaOfertaNormal += item.precio * item.cantidad;
-                }
 
                 const li = document.createElement("li");
                 li.textContent = `x${item.cantidad} ${item.nombre} - $${(item.precio * item.cantidad).toFixed(2)}`;
@@ -807,18 +777,6 @@
 
                 li.appendChild(btnEliminar);
                 listaCarrito.appendChild(li);
-            }
-
-            // Aplicar promo: cada 5 cookies de oferta salen $9.000
-            const combos = Math.floor(cantidadOferta / 5);
-            if (combos > 0) {
-                // Parte proporcional del costo normal de las cookies de oferta que forman parte de los combos
-                const normalShare = sumaOfertaNormal * ((combos * 5) / cantidadOferta);
-                total = total - normalShare + combos * 9000;
-
-                const promoLi = document.createElement("li");
-                promoLi.innerHTML = `<strong>Promo 5 Cookies x $9.000 aplicada 🎉</strong>`;
-                listaCarrito.appendChild(promoLi);
             }
 
             contadorCarrito.textContent = cantidadTotal;
@@ -836,13 +794,11 @@
                 const id = boton.dataset.id;
                 const nombre = boton.dataset.nombre;
                 const precio = parseFloat(boton.dataset.precio);
-                // Detectar si este producto está marcado como parte de la oferta
-                const oferta = boton.dataset.oferta === "true";
 
                 if (carrito[id]) {
                     carrito[id].cantidad++;
                 } else {
-                    carrito[id] = { nombre, precio, cantidad: 1, oferta };
+                    carrito[id] = { nombre, precio, cantidad: 1 };
                 }
                 actualizarCarrito();
             });
@@ -870,17 +826,6 @@
             }
 
             let total = Object.values(carrito).reduce((acc, item) => acc + item.precio * item.cantidad, 0);
-
-            // Recalcular total con promo aplicada para el mensaje
-            let cantidadOferta = 0;
-            Object.values(carrito).forEach(item => {
-                if (item.oferta) cantidadOferta += item.cantidad;
-            });
-            const combos = Math.floor(cantidadOferta / 5);
-            if (combos > 0) {
-                mensaje += `%0A🎉 Oferta x5 cookies aplicada (${combos} combo/s)`;
-            }
-
             mensaje += `%0ATotal: $${total.toFixed(2)}`;
 
             const telefono = "5491167203462"; // Cambiar por tu número sin espacios ni signos
@@ -910,9 +855,14 @@
                 }
             });
         });
+
+
+
+
     </script>
 
     <script>
+
         async function actualizarProductos() {
             try {
                 const response = await fetch("https://sheetdb.io/api/v1/kh3et5drhwxp9"); // Cambiá por tu URL real
@@ -959,8 +909,9 @@
         // Mostrar mensajes al entrar
         window.addEventListener("load", () => {
             const mensajes = [
-                "Con tu compra mayor a $10.000 te llevas tus cookies",
+                "Con tu compra mayor a $10.000 te llevas tus cookies en cajita",
                 "Recordá mencionarnos en tu historia cuando retires tus cookies",
+
             ];
 
             let i = 0;
@@ -986,8 +937,8 @@
 
 
 
-
     </script>
+
 
     </script>
 
@@ -1031,6 +982,7 @@
 
 
 
+
     </script>
 
 
@@ -1065,6 +1017,7 @@
         });
 
     </script>
+
 
     <footer>
         <p>&copy; 2025 Cookiies.lovee</p>
