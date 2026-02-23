@@ -1,416 +1,237 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Cookiies.lovee</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        :root {
+            /* TUS COLORES */
+            --bg: #fcc9d0;
+            --brand: #a7120e;
+            --brand-2: #7f0f0c;
+            /* Legibilidad */
+            --text: #2a0b0a;
+            --muted: rgba(42,11,10,.78);
+            /* UI */
+            --card: rgba(255,255,255,.86);
+            --card-2: rgba(255,255,255,.94);
+            --stroke: rgba(167,18,14,.16);
+            --shadow: 0 16px 34px rgba(0,0,0,.10);
+            --shadow-soft: 0 10px 22px rgba(0,0,0,.08);
+            --radius: 18px;
+            --smooth: 220ms;
+            --maxw: 1100px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fcc9d0;
-            color: #ffffff;
+            color: var(--text);
+            background: radial-gradient(900px 420px at 15% 0%, rgba(167,18,14,.12), transparent 60%), radial-gradient(700px 320px at 85% 10%, rgba(255,255,255,.30), transparent 55%), linear-gradient(180deg, var(--bg), #ffc2cb 55%, #ffb6c3);
         }
 
+        a {
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* =============================
+           HEADER / NAV
+        ============================== */
         header {
-            background-color: #a7120e;
+            background: linear-gradient(135deg, var(--brand), var(--brand-2));
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 30px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 14px 18px;
+            box-shadow: var(--shadow-soft);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-
-
-        /* --- CARTEL DE OFERTA NAVIDEÑA --- */
-        .cartel-oferta {
-            background-color: #fcc9d0;
-            color: #a7120e;
-            text-align: center;
-            padding: 12px;
-            font-weight: 800;
-            font-size: 1.1rem;
-            /* Cambié '4px dashed' por 'none' para quitar los cuadraditos */
-            border-bottom: none;
-            position: relative;
-            z-index: 999;
-            text-transform: uppercase;
-        }
-
-            .cartel-oferta span {
-                color: #a7120e;
-                font-size: 1.3rem;
-            }
-
-
-
-
         .logo img {
-            height: 80px;
+            height: 72px;
+            filter: drop-shadow(0 8px 14px rgba(0,0,0,.18));
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 50px;
+            gap: 12px;
             margin: 0;
             padding: 0;
+            align-items: center;
         }
 
         nav a {
             text-decoration: none;
             color: #ffffff;
-            font-weight: 600;
-            padding: 8px 10px;
-            border-radius: 8px;
-            transition: background 0.3s;
+            font-weight: 800;
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: rgba(255,255,255,.10);
+            border: 1px solid rgba(255,255,255,.18);
+            transition: transform var(--smooth), background var(--smooth), color var(--smooth);
         }
 
             nav a:hover {
-                background-color: #ffffff;
-                color: #a7120e;
+                background: #fff;
+                color: var(--brand);
+                transform: translateY(-1px);
             }
 
+        /* =============================
+           MENU TOGGLE
+        ============================== */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+            width: 34px;
+            height: 30px;
+            gap: 6px;
+            padding: 6px;
+            border-radius: 10px;
+            background: rgba(255,255,255,.10);
+            border: 1px solid rgba(255,255,255,.16);
+            transition: transform var(--smooth);
+        }
 
-        body {
-            background-color: #a7120e;
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #111;
+            .menu-toggle:hover {
+                transform: translateY(-1px);
+            }
+
+            .menu-toggle span {
+                height: 3px;
+                width: 100%;
+                background: #fff;
+                border-radius: 2px;
+            }
+
+        /* =============================
+           MAIN / TITULO / AVISO
+        ============================== */
+        main {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 28px 18px 10px;
         }
 
         .productos {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
             text-align: center;
+            margin: 18px 0 0;
         }
 
             .productos h2 {
-                color: #fff;
-                font-size: 3rem;
-                margin-bottom: 40px;
+                font-family: 'DM Serif Display', serif;
+                color: var(--brand);
+                font-size: clamp(2.1rem, 3.5vw, 3rem);
+                margin: 8px 0 18px;
+                letter-spacing: .2px;
             }
 
-        .grid-productos {
-            display: grid;
-            gap: 30px;
-            grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+        .aviso {
+            background: rgba(255,255,255,.82);
+            border: 1px solid var(--stroke);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            margin: 0 auto 22px;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
         }
 
-        .producto {
-            background-color: #ffffff;
-            border-radius: 16px;
-            padding: 20px;
-            color: #a7120e;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s;
-        }
-
-            .producto:hover {
-                transform: scale(1.03);
+            .aviso h3 {
+                margin: 0;
+                color: var(--brand);
+                font-weight: 900;
+                font-size: 1.15rem;
+                line-height: 1.35;
             }
 
-            .producto img {
-                width: 100%;
-                border-radius: 12px;
-                margin-bottom: 15px;
-                border: 3px solid #000000;
+            .aviso small {
+                display: block;
+                margin-top: 8px;
+                font-weight: 800;
+                color: rgba(42,11,10,.85);
             }
 
-            .producto h3 {
-                font-size: 1.5rem;
-                margin: 10px 0 5px;
-                color: #333333;
-            }
-
-            .producto p {
-                font-size: 0.99rem;
-                margin-bottom: 10px;
-            }
-
-            .producto span {
-                display: inline-block;
-                font-weight: bold;
-                font-size: 1.5rem;
-                color: #000000;
-                padding: 6px 12px;
-                border-radius: 8px;
-                vertical-align: middle;
-            }
-
-        .btn-agregar {
-            background-color: #f7d1d5;
-            color: black;
-            border: none;
-            padding: 10px 16px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-            .btn-agregar:hover {
-                background-color: #d4b8bb;
-            }
-
-
-
-        /* WhatsApp boton */
-        #WhatsAppBoton {
-            position: fixed;
-            top: 200px;
-            right: 20px;
-            width: 56px;
-            height: 56px;
-            border-radius: 65%;
-            box-shadow: 0 4px 10px #111(0,0,0,0.0);
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-        }
-
-            #WhatsAppBoton img {
-                width: 40px;
-                height: 40px;
-            }
-
-
-        /* Carrito boton */
-        #carritoBoton {
-            position: fixed;
-            top: 125px;
-            right: 20px;
-            width: 56px;
-            height: 56px;
-            background-color: #ffffff;
-            border-radius: 50%;
-            box-shadow: 0 4px 10px #111(0,0,0,0.0);
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-        }
-
-            #carritoBoton img {
-                width: 32px;
-                height: 32px;
-            }
-
-        #contadorCarrito {
-            position: absolute;
-            top: 4px;
-            right: 4px;
-            background: #fcc9d0;
-            color: #111;
-            border-radius: 50%;
-            padding: 3px 7px;
-            font-weight: 700;
-            font-size: 14px;
-            display: none;
-        }
-
-        /* Panel carrito */
-        #carritoPanel {
-            position: fixed;
-            top: 190px;
-            right: 20px;
-            width: 320px;
-            max-height: 480px;
-            background: #fcc9d0;
-            color: #111;
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 6px 20px #111(0,0,0,0.0);
-            overflow-y: auto;
-            display: none;
-            flex-direction: column;
-            z-index: 10000;
-        }
-
-            #carritoPanel h3 {
-                text-align: center;
-                margin-top: 0;
-                color: #111;
-            }
-
-        #listaCarrito {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 15px 0;
-            color: #111;
-        }
-
-            #listaCarrito li {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 10px;
-                font-weight: 600;
-            }
-
-            #listaCarrito button {
-                background: #fcc9d0;
-                color: #a7120e;
-                border: none;
-                border-radius: 50%;
-                width: 24px;
-                height: 24px;
-                font-weight: 700;
-                cursor: pointer;
-                line-height: 18px;
-                padding: 0;
-            }
-
-        #totalCarrito {
-            text-align: right;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #111;
-        }
-
-        #btnHacerPedido {
-            background-color: #ffffff;
-            color: #a7120e;
-            border: none;
-            padding: 12px;
-            width: 100%;
-            font-weight: 700;
-            border-radius: 12px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-        }
-
-            #btnHacerPedido:hover {
-                background-color: #f7d1d5;
-            }
-
-
-
-
+        /* =============================
+           ACORDEÓN
+        ============================== */
         .acordeon-bloque {
-            margin-bottom: 2rem;
-            border: 2px solid #fcc9d0;
-            border-radius: 12px;
+            margin: 0 auto 18px;
+            border: 1px solid var(--stroke);
+            border-radius: var(--radius);
             overflow: hidden;
-            background-color: #fcc9d0;
+            background: rgba(255,255,255,.64);
+            box-shadow: var(--shadow-soft);
         }
 
         .acordeon-titulo {
-            background-color: transparent;
+            background: transparent;
             border: none;
             width: 100%;
             text-align: left;
-            padding: 1.2rem 2rem;
-            font-size: 1.7rem;
-            font-family: 'Averia Serif Libre', serif;
+            padding: 16px 16px;
             cursor: pointer;
-            color: #a7120e; /* 🎯 Color rojo oscuro que usás en tu sitio */
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 12px;
         }
 
-        .acordeon-titulo {
-            color: #a7120e !important;
-        }
-
+            .acordeon-titulo h2 {
+                margin: 0;
+                font-family: 'DM Serif Display', serif;
+                color: var(--brand);
+                font-size: 1.55rem;
+                letter-spacing: .2px;
+            }
 
         .flecha {
             display: inline-block;
-            transition: transform 0.3s ease;
+            transition: transform var(--smooth);
             font-size: 1.2rem;
-            margin-left: 0.5rem;
-            transform: rotate(180deg); /* 🔼 Flecha hacia arriba por defecto (cerrado) */
+            transform: rotate(180deg);
+            color: var(--brand);
+            font-weight: 900;
         }
 
             .flecha.abierta {
-                transform: rotate(0deg); /* 🔽 Flecha hacia abajo cuando está abierto */
+                transform: rotate(0deg);
             }
 
         .acordeon-contenido {
             display: none;
-            padding: 1rem;
-            animation: fadeIn 0.3s ease-in-out;
-        }
-
-
-        /* ✅ Sombra al abrir el bloque */
-        .acordeon-contenido {
-            box-shadow: 0 10px 20px #000000;
-        }
-
-
-
-
-        /* MASCOTA COOKIE */
-        .cookie-mascota {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 90px;
-            height: 90px;
-            background-image: url('cookietiernanavidad.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            z-index: 9999;
-            transition: transform 0.3s ease;
-            animation: saltito 2s infinite;
-            cursor: pointer;
-        }
-
-            .cookie-mascota:hover {
-                transform: scale(1.1);
-            }
-
-        @keyframes saltito {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-
-
-        .cookie-chat-bubble {
-            position: fixed;
-            bottom: 130px;
-            right: 20px;
-            background-color: #ffffff;
-            color: #a7120e;
-            padding: 12px 18px;
-            border-radius: 16px;
-            font-weight: bold;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            z-index: 9999;
-            max-width: 250px;
-            font-size: 14px;
-            display: none;
-            animation: fadeIn 0.5s ease;
+            padding: 16px;
+            border-top: 1px solid rgba(167,18,14,.12);
+            animation: fadeIn .25s ease-in-out;
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(10px);
+                transform: translateY(8px);
             }
 
             to {
@@ -419,139 +240,511 @@
             }
         }
 
+        /* =============================
+           GRID / PRODUCTO
+        ============================== */
+        .grid-productos {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
 
+        .producto {
+            background: var(--card-2);
+            border: 1px solid rgba(167,18,14,.14);
+            border-radius: var(--radius);
+            padding: 14px;
+            box-shadow: var(--shadow-soft);
+            transition: transform var(--smooth), box-shadow var(--smooth);
+            text-align: left;
+        }
 
-        .chat-burbuja {
-            background-color: white;
-            color: #a7120e;
-            padding: 12px 16px;
-            border-radius: 18px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            font-weight: bold;
-            font-size: 14px;
-            max-width: 250px;
-            transition: opacity 0.5s ease;
-            z-index: 10000;
+            .producto:hover {
+                transform: translateY(-3px);
+                box-shadow: var(--shadow);
+            }
+
+            .producto img {
+                width: 100%;
+                border-radius: 14px;
+                margin-bottom: 10px;
+                border: none;
+                box-shadow: 0 10px 18px rgba(0,0,0,.10);
+            }
+
+            .producto h3 {
+                margin: 8px 0 6px;
+                color: var(--text);
+                font-size: 1.15rem;
+                font-weight: 900;
+            }
+
+            .producto p {
+                margin: 0 0 10px;
+                color: var(--muted);
+                font-size: .95rem;
+                line-height: 1.45;
+            }
+
+        .precio {
+            display: block; /* antes era inline-block */
+            width: fit-content;
+            margin: 10px auto 12px; /* centrado + separación abajo */
+            text-align: center;
+            font-weight: 900;
+            font-size: 1.25rem;
+            color: var(--brand);
+            background: rgba(167,18,14,.08);
+            border: 1px solid rgba(167,18,14,.14);
+            padding: 8px 14px;
+            border-radius: 12px;
         }
 
 
-
-        footer {
-            background-color: #fcc9d0;
+        .stock {
+            margin: 0 0 12px; /* antes tenía margin arriba */
+            font-weight: 800;
+            color: rgba(42,11,10,.86);
+            background: rgba(255,255,255,.70);
+            border: 1px solid rgba(167,18,14,.10);
+            border-radius: 12px;
+            padding: 8px 10px;
             text-align: center;
-            padding: 30px;
-            border-top: 3px solid #ffffff;
+        }
+
+
+        .btn-agregar {
+            width: 100%;
+            background: linear-gradient(135deg, rgba(167,18,14,.98), rgba(127,15,12,.98));
+            color: #fff;
+            border: none;
+            padding: 11px 14px;
+            border-radius: 14px;
+            font-weight: 900;
+            cursor: pointer;
+            transition: transform var(--smooth), filter var(--smooth);
+        }
+
+            .btn-agregar:hover {
+                transform: translateY(-1px);
+                filter: brightness(1.05);
+            }
+
+        /* =============================
+           BOTONES FLOTANTES (Carrito / WhatsApp)
+        ============================== */
+        #carritoBoton {
+            position: fixed;
+            top: 120px;
+            right: 18px;
+            width: 56px;
+            height: 56px;
+            background: rgba(255,255,255,.92);
+            border-radius: 16px;
+            box-shadow: 0 14px 26px rgba(0,0,0,.18);
+            border: 1px solid rgba(0,0,0,.06);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: transform var(--smooth);
+        }
+
+            #carritoBoton:hover {
+                transform: translateY(-2px);
+            }
+
+            #carritoBoton img {
+                width: 30px;
+                height: 30px;
+            }
+
+        #contadorCarrito {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--brand);
+            color: #fff;
+            border-radius: 999px;
+            padding: 4px 8px;
+            font-weight: 900;
+            font-size: 13px;
+            display: none;
+            box-shadow: 0 10px 18px rgba(0,0,0,.18);
+        }
+
+        #WhatsAppBoton {
+            position: fixed;
+            top: 190px;
+            right: 18px;
+            width: 56px;
+            height: 56px;
+            background: rgba(255,255,255,.92);
+            border-radius: 16px;
+            box-shadow: 0 14px 26px rgba(0,0,0,.18);
+            border: 1px solid rgba(0,0,0,.06);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: transform var(--smooth);
+        }
+
+            #WhatsAppBoton:hover {
+                transform: translateY(-2px);
+            }
+
+            #WhatsAppBoton img {
+                width: 34px;
+                height: 34px;
+                border-radius: 10px;
+            }
+
+        /* =============================
+           PANEL CARRITO
+        ============================== */
+        #carritoPanel {
+            position: fixed;
+            top: 190px;
+            right: 18px;
+            width: 330px;
+            max-height: 520px;
+            background: rgba(255,255,255,.92);
+            color: var(--text);
+            border-radius: var(--radius);
+            padding: 16px;
+            box-shadow: 0 22px 40px rgba(0,0,0,.22);
+            border: 1px solid rgba(0,0,0,.06);
+            overflow-y: auto;
+            display: none;
+            flex-direction: column;
+            z-index: 10000;
+        }
+
+            #carritoPanel h3 {
+                margin: 0 0 10px;
+                text-align: center;
+                color: var(--brand);
+                font-family: 'DM Serif Display', serif;
+                font-size: 1.5rem;
+            }
+
+        #listaCarrito {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 12px 0;
+        }
+
+            #listaCarrito li {
+                display: flex;
+                justify-content: space-between;
+                gap: 10px;
+                align-items: center;
+                margin-bottom: 10px;
+                font-weight: 800;
+                background: rgba(167,18,14,.06);
+                border: 1px solid rgba(167,18,14,.10);
+                border-radius: 14px;
+                padding: 10px 10px;
+            }
+
+            #listaCarrito button {
+                background: #fff;
+                color: var(--brand);
+                border: 1px solid rgba(167,18,14,.22);
+                border-radius: 999px;
+                width: 28px;
+                height: 28px;
+                font-weight: 900;
+                cursor: pointer;
+                line-height: 24px;
+                padding: 0;
+                transition: transform var(--smooth), background var(--smooth);
+            }
+
+                #listaCarrito button:hover {
+                    transform: scale(1.06);
+                    background: rgba(167,18,14,.08);
+                }
+
+        #totalCarrito {
+            text-align: right;
+            font-weight: 900;
+            margin: 8px 0 12px;
+            color: var(--text);
+        }
+
+        #btnHacerPedido {
+            background: linear-gradient(135deg, rgba(167,18,14,.98), rgba(127,15,12,.98));
+            color: #fff;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            font-weight: 900;
+            border-radius: 14px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform var(--smooth), filter var(--smooth);
+        }
+
+            #btnHacerPedido:hover {
+                transform: translateY(-1px);
+                filter: brightness(1.05);
+            }
+
+        /* =============================
+           MASCOTA COOKIE
+        ============================== */
+        .cookie-mascota {
+            position: fixed;
+            bottom: 18px;
+            right: 18px;
+            width: 90px;
+            height: 90px;
+            background-image: url('cookietierna.png'); /* vos la cambiás */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 9999;
+            cursor: pointer;
+            animation: saltito 2s infinite;
+            transition: transform var(--smooth);
+            /* sin recuadro */
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+            .cookie-mascota:hover {
+                transform: scale(1.08);
+            }
+
+        @keyframes saltito {
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .cookie-chat-bubble {
+            position: fixed;
+            bottom: 120px;
+            right: 18px;
+            background: rgba(255,255,255,.92);
+            color: var(--brand);
+            padding: 12px 14px;
+            border-radius: 16px;
+            font-weight: 900;
+            box-shadow: 0 18px 30px rgba(0,0,0,.18);
+            z-index: 9999;
+            max-width: 270px;
+            font-size: 14px;
+            display: none;
+            border: 1px solid rgba(0,0,0,.06);
+            animation: fadeIn .25s ease-in-out;
+        }
+
+            .cookie-chat-bubble::after {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                right: 18px;
+                width: 18px;
+                height: 18px;
+                background: rgba(255,255,255,.92);
+                transform: rotate(45deg);
+                border-right: 1px solid rgba(0,0,0,.06);
+                border-bottom: 1px solid rgba(0,0,0,.06);
+            }
+
+        /* =============================
+           FOOTER
+        ============================== */
+        footer {
+            margin-top: 26px;
+            background: rgba(255,255,255,.70);
+            border-top: 1px solid var(--stroke);
+            text-align: center;
+            padding: 28px 18px;
         }
 
             footer p {
                 margin: 0;
-                font-weight: bold;
-                color: #a7120e;
+                font-weight: 900;
+                color: var(--brand);
             }
 
         .redes {
             margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
             .redes a {
-                margin: 0 10px;
                 text-decoration: none;
-                color: #a7120e;
-                font-weight: bold;
-                transition: color 0.3s;
+                color: var(--brand);
+                font-weight: 900;
+                padding: 10px 14px;
+                border-radius: 999px;
+                background: rgba(167,18,14,.08);
+                border: 1px solid rgba(167,18,14,.16);
+                transition: transform var(--smooth), background var(--smooth);
             }
 
                 .redes a:hover {
-                    color: #880e0a;
+                    transform: translateY(-2px);
+                    background: rgba(167,18,14,.12);
                 }
 
-
-
-
-
-
-        /* --- RESPONSIVE --- */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 28px;
-            height: 22px;
-            cursor: pointer;
-        }
-
-            .menu-toggle span {
-                height: 3px;
-                width: 100%;
-                background-color: #fff;
-                border-radius: 2px;
-                transition: all 0.3s ease;
-            }
-
+        /* =============================
+           RESPONSIVE
+        ============================== */
         @media (max-width: 768px) {
             nav ul {
                 display: none;
                 flex-direction: column;
-                background-color: #a7120e;
+                background: rgba(167,18,14,.98);
                 position: absolute;
-                top: 70px;
-                right: 20px;
-                padding: 15px;
-                border-radius: 10px;
+                top: 78px;
+                right: 14px;
+                padding: 12px;
+                border-radius: 16px;
+                box-shadow: var(--shadow-soft);
+                border: 1px solid rgba(255,255,255,.14);
+                width: 220px;
             }
 
                 nav ul.active {
                     display: flex;
                 }
 
+            nav a {
+                width: 100%;
+                text-align: center;
+            }
+
             .menu-toggle {
                 display: flex;
             }
 
-            .hero-texto h1 {
-                font-size: 1.8rem;
+            .logo img {
+                height: 62px;
             }
 
-            .presentacion, .quienes-somos, .Entregas {
-                padding: 20px;
+            #carritoPanel {
+                right: 14px;
+                width: calc(100% - 28px);
+                max-width: 360px;
             }
 
             .cookie-mascota {
-                width: 65px;
-                height: 65px;
+                width: 70px;
+                height: 70px;
+                right: 14px;
+                bottom: 14px;
+            }
+
+            .cookie-chat-bubble {
+                right: 14px;
+            }
+
+            #carritoBoton, #WhatsAppBoton {
+                right: 14px;
             }
         }
 
 
 
+        /* =============================
+   STOCK VISUAL PRO (EZIMPORTTE STYLE)
+============================== */
 
+        /* Contenedor para poder poner cartel encima */
+        .producto {
+            position: relative;
+            overflow: hidden;
+        }
 
-        /* --- BADGE PROMO --- */
-        .badge-promo {
-            background-color: #a7120e;
-            color: #fff;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 4px 8px;
-            border-radius: 8px;
-            display: inline-block;
-            margin-bottom: 6px;
+        /* Cinta/cartel arriba a la derecha */
+        .stock-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 7px 10px;
+            border-radius: 999px;
+            font-weight: 900;
+            font-size: .78rem;
+            letter-spacing: .2px;
+            box-shadow: 0 12px 22px rgba(0,0,0,.18);
+            z-index: 3;
+            display: none; /* se muestra por JS */
+            user-select: none;
+        }
+
+        /* Estados del badge */
+        .stock-ok {
+            background: rgba(255,255,255,.92);
+            color: var(--brand);
+            border: 1px solid rgba(167,18,14,.18);
+        }
+
+        .stock-low {
+            background: rgba(255,255,255,.92);
+            color: #7a4b00;
+            border: 1px solid rgba(122,75,0,.22);
+        }
+
+        .stock-out {
+            background: rgba(255,255,255,.92);
+            color: #b00020;
+            border: 1px solid rgba(176,0,32,.20);
+        }
+
+        /* Producto sin stock: baja opacidad + look deshabilitado */
+        .producto.is-out {
+            opacity: .60;
+            filter: grayscale(.12);
+        }
+
+        /* Botón deshabilitado */
+        .btn-agregar.is-disabled,
+        .btn-agregar:disabled {
+            background: rgba(167,18,14,.35) !important;
+            cursor: not-allowed !important;
+            transform: none !important;
+            filter: none !important;
+        }
+
+        /* El texto de stock se ve más "pill" */
+        .stock {
+            margin: 0 0 12px;
+            font-weight: 900;
+            color: rgba(42,11,10,.86);
+            background: rgba(255,255,255,.75);
+            border: 1px solid rgba(167,18,14,.10);
+            border-radius: 999px;
+            padding: 8px 10px;
+            text-align: center;
         }
 
     </style>
-
 </head>
+
 <body>
     <header>
         <div class="logo">
-            <img src="LOGO1.png" />
+            <img src="LOGO1.png" alt="Logo Cookiies.lovee" />
         </div>
 
-        <!-- Botón hamburguesa -->
         <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </div>
 
         <nav>
@@ -563,198 +756,196 @@
         </nav>
     </header>
 
-
-    <div class="cartel-oferta">
-        ¡PROMO ESPECIAL! 🍪 5 Cookies x <span>$9.000</span>
-    </div>
-
-
     <main>
-
         <section class="productos">
-            <h2 style="font-family: 'Averia Serif Libre', serif;">Nuestras Cookies</h2>
-            <section style="background-color: #fcc9d0; padding: 20px; border-radius: 16px; margin: 40px auto; max-width: 1000px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-                <h2 style="color: #a7120e; font-family: 'Averia Serif Libre', serif; font-size: 1.6rem; margin-bottom: 15px;">
-                    MÍNIMO 2 DÍAS DE ANTICIPACIÓN PARA CADA PEDIDO<br>
-                    <span style="font-size: 1rem; display: block; margin-top: 5px;"><b>(IGUALMENTE SIEMPRE CONSULTAR SI HAY STOCK)</b></span>
-                </h2>
-                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
-                </div>
+            <h2>Nuestras Cookies</h2>
+
+            <section class="aviso">
+                <h3>
+                    MÍNIMO 2 DÍAS DE ANTICIPACIÓN PARA CADA PEDIDO
+                    <small>(IGUALMENTE SIEMPRE CONSULTAR SI HAY STOCK)</small>
+                </h3>
             </section>
 
-
-
-
+            <!-- CLÁSICAS -->
             <div class="acordeon-bloque">
                 <button class="acordeon-titulo">
-                    <h2 style="color: #a7120e; font-family: 'Averia Serif Libre', serif;">Clásicas</h2>
+                    <h2>Clásicas</h2>
                     <span class="flecha">▼</span>
                 </button>
 
                 <div class="acordeon-contenido">
                     <div class="grid-productos">
                         <div class="producto" id="clasica-choco">
-                            <img src="clasicachoco.jpg" alt="Clasicas Choco" />
-                            <div class="badge-promo">APLICA EN LA PROMO</div>
+                            <img src="clasicachocos.jpg" alt="Clasicas Choco" />
                             <h3>Clásica Choco</h3>
                             <p>Masa de vainilla con chispas y pedacitos de chocolate.</p>
-                            <span class="precio" data-id="1">$1.400</span>
-                            <p class="stock" data-id="1"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="1" data-nombre="Clasicas Choco" data-precio="1400" data-oferta="true">Agregar</button>
+                            <span class="precio" data-id="1">$2.500</span>
+                            <p class="stock" data-id="1"></p>
+                            <button class="btn-agregar" data-id="1" data-nombre="Clasicas Choco" data-precio="2500">Agregar</button>
                         </div>
+
                         <div class="producto">
-                            <img src="Clasicachocoblanco.jpg" alt="Clasicas Choco Blanco" />
+                            <img src="Clasicaschocoblanco.jpg" alt="Clasicas Choco Blanco" />
                             <h3>Clásica Choco Blanco</h3>
                             <p>Masa de vainilla con choco blanco.</p>
-                            <span class="precio" data-id="2">$1.400</span>
-                            <p class="stock" data-id="2"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="2" data-nombre="Clasicas Choco Blanco" data-precio="1400">Agregar</button>
+                            <span class="precio" data-id="2">$2.500</span>
+                            <p class="stock" data-id="2"></p>
+                            <button class="btn-agregar" data-id="2" data-nombre="Clasicas Choco Blanco" data-precio="2500">Agregar</button>
                         </div>
+
                         <div class="producto">
-                            <img src="oreo.jpg" alt="Cookie de Oreo" />
-                            <div class="badge-promo">APLICA EN LA PROMO</div>
+                            <img src="oreos.jpg" alt="Cookie de Oreo" />
                             <h3>Oreo</h3>
                             <p>Masa de vainilla con chocolate negro y blanco, con oreo triturada.</p>
-                            <span class="precio" data-id="4">$1.400</span>
-                            <p class="stock" data-id="4"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="4" data-nombre="Cookie de Oreo" data-precio="1400" data-oferta="true">Agregar</button>
+                            <span class="precio" data-id="4">$3.500</span>
+                            <p class="stock" data-id="4"></p>
+                            <button class="btn-agregar" data-id="4" data-nombre="Cookie de Oreo" data-precio="3500">Agregar</button>
                         </div>
+
                         <div class="producto">
-                            <img src="Doblechoco.jpg" alt="Cookie de Doble Choco" />
+                            <img src="Doblechocos.jpg" alt="Cookie de Doble Choco" />
                             <h3>Doble Choco</h3>
                             <p>Masa de chocolate y chispas de chocolate negro.</p>
-                            <span class="precio" data-id="6">$1.600</span>
-                            <p class="stock" data-id="6"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="6" data-nombre="Doble Choco" data-precio="1600">Agregar</button>
+                            <span class="precio" data-id="6">$3.500</span>
+                            <p class="stock" data-id="6"></p>
+                            <button class="btn-agregar" data-id="6" data-nombre="Doble Choco" data-precio="3500">Agregar</button>
                         </div>
+
                         <div class="producto">
-                            <img src="Rocklets.jpg" alt="Cookie de Rocklets" />
+                            <img src="Rocklet.jpg" alt="Cookie de Rocklets" />
                             <h3>Rocklets</h3>
                             <p>Masa de vainilla con rocklets y chispas de chocolate.</p>
-                            <span class="precio" data-id="7">$1.400</span>
-                            <p class="stock" data-id="7"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="7" data-nombre="Cookie de Rocklets" data-precio="1400">Agregar</button>
+                            <span class="precio" data-id="7">$3.000</span>
+                            <p class="stock" data-id="7"></p>
+                            <button class="btn-agregar" data-id="7" data-nombre="Cookie de Rocklets" data-precio="3000">Agregar</button>
                         </div>
+
                         <div class="producto">
-                            <img src="Redvelvet.jpg" alt="Cookie de Red Velvet" />
-                            <div class="badge-promo">APLICA EN LA PROMO</div>
+                            <img src="Redvelvets.jpg" alt="Cookie de Red Velvet" />
                             <h3>Red Velvet</h3>
                             <p>Masa de red velvet, con pedacitos y chispas de choco blanco.</p>
-                            <span class="precio" data-id="8">$1.500</span>
-                            <p class="stock" data-id="8"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="8" data-nombre="Cookie de Red Velvet" data-precio="1500" data-oferta="true">Agregar</button>
+                            <span class="precio" data-id="8">$3.500</span>
+                            <p class="stock" data-id="8"></p>
+                            <button class="btn-agregar" data-id="8" data-nombre="Cookie de Red Velvet" data-precio="3.500">Agregar</button>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- RELLENAS -->
             <div class="acordeon-bloque">
                 <button class="acordeon-titulo">
-                    <h2 style="color: #a7120e; font-family: 'Averia Serif Libre', serif;">Rellenas</h2>
+                    <h2>Rellenas</h2>
                     <span class="flecha">▼</span>
                 </button>
+
                 <div class="acordeon-contenido">
                     <div class="grid-productos">
                         <div class="producto">
-                            <img src="membrillo.jpg" alt="Cookie de Membrillo" />
-                            <h3 style="font-family: 'Averia Serif Libre', serif;">Membrillo</h3>
-                            <p style="font-family: 'roboto', roboto;">Masa de vainilla rellena de membrillo.</p>
-                            <span class="precio" data-id="9">$1.400</span>
-                            <p class="stock" data-id="9"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="9" data-nombre="Cookie de Membrillo" data-precio="1400">Agregar</button>
+                            <img src="membrillos.jpg" alt="Cookie de Membrillo" />
+                            <h3>Membrillo</h3>
+                            <p>Masa de vainilla rellena de membrillo.</p>
+                            <span class="precio" data-id="9">$1.900</span>
+                            <p class="stock" data-id="9"></p>
+                            <button class="btn-agregar" data-id="9" data-nombre="Cookie de Membrillo" data-precio="1900">Agregar</button>
                         </div>
+
                         <div class="producto">
-                            <img src="dulcedeleche.jpg" alt="Cookie de Dulce de Leche" />
-                            <h3 style="font-family: 'Averia Serif Libre', serif;">Dulce de Leche</h3>
-                            <p style="font-family: 'roboto', roboto;">Masa de vainilla, rellena de dulce de leche.</p>
-                            <span class="precio" data-id="11">$1.400</span>
-                            <p class="stock" data-id="11"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="11" data-nombre="Cookie de Dulce de Leche" data-precio="1400">Agregar</button>
+                            <img src="dulcedeleches.jpg" alt="Cookie de Dulce de Leche" />
+                            <h3>Dulce de Leche</h3>
+                            <p>Masa de vainilla, rellena de dulce de leche.</p>
+                            <span class="precio" data-id="11">$1.900</span>
+                            <p class="stock" data-id="11"></p>
+                            <button class="btn-agregar" data-id="11" data-nombre="Cookie de Dulce de Leche" data-precio="1900">Agregar</button>
                         </div>
+
                         <div class="producto">
-                            <img src="OreoDentro.jpg" alt="Cookie con Oreo Dentro" />
-                            <h3 style="font-family: 'Averia Serif Libre', serif;">Oreo Dentro</h3>
-                            <p style="font-family: 'roboto', roboto;">Masa de vainilla con una oreo por dentro</p>
-                            <span class="precio" data-id="12">$1.400</span>
-                            <p class="stock" data-id="12"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="12" data-nombre="Cookie con Oreo Dentro" data-precio="1400">Agregar</button>
+                            <img src="OreosDentro.jpg" alt="Cookie con Oreo Dentro" />
+                            <h3>Oreo Dentro</h3>
+                            <p>Masa de vainilla con una oreo por dentro</p>
+                            <span class="precio" data-id="12">$2.000</span>
+                            <p class="stock" data-id="12"></p>
+                            <button class="btn-agregar" data-id="12" data-nombre="Cookie con Oreo Dentro" data-precio="2000">Agregar</button>
                         </div>
+
                         <div class="producto">
-                            <img src="nutella.jpg" alt="Cookie de Nutella" />
-                            <div class="badge-promo">APLICA EN LA PROMO</div>
-                            <h3 style="font-family: 'Averia Serif Libre', serif;">Nutella</h3>
-                            <p style="font-family: 'roboto', roboto;">Masa de vainilla, rellena de nutella.</p>
-                            <span class="precio" data-id="13">$1.800</span>
-                            <p class="stock" data-id="13"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="13" data-nombre="Cookie de Nutella" data-precio="1800" data-oferta="true">Agregar</button>
+                            <img src="nutellas.jpg" alt="Cookie de Nutella" />
+                            <h3>Nutella</h3>
+                            <p>Masa de vainilla, rellena de nutella.</p>
+                            <span class="precio" data-id="13">$4.000</span>
+                            <p class="stock" data-id="13"></p>
+                            <button class="btn-agregar" data-id="13" data-nombre="Cookie de Nutella" data-precio="4000">Agregar</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-
-
+            <!-- ESPECIALES -->
             <div class="acordeon-bloque">
                 <button class="acordeon-titulo">
-                    <h2 style="color: #a7120e; font-family: 'Averia Serif Libre', serif;">Especiales</h2>
+                    <h2>Especiales</h2>
                     <span class="flecha">▼</span>
                 </button>
+
                 <div class="acordeon-contenido">
                     <div class="grid-productos">
                         <div class="producto">
-                            <img src="Nutellaychoco.jpg" alt="Cookie de Nutella y Choco" />
-                            <h3 style="font-family: 'Averia Serif Libre', serif;">Nutella y Choco</h3>
-                            <p style="font-family: 'roboto', roboto;">Masa de vainilla con pedacitos de chocolate, rellena de nutella.</p>
-                            <span class="precio" data-id="14">$2.100</span>
-                            <p class="stock" data-id="14"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="14" data-nombre="Cookie de Nutella y Choco" data-precio="2100">Agregar</button>
+                            <img src="Nutellaychocos.jpg" alt="Cookie de Nutella y Choco" />
+                            <h3>Nutella y Choco</h3>
+                            <p>Masa de vainilla con pedacitos de chocolate, rellena de nutella.</p>
+                            <span class="precio" data-id="14">$4.000</span>
+                            <p class="stock" data-id="14"></p>
+                            <button class="btn-agregar" data-id="14" data-nombre="Cookie de Nutella y Choco" data-precio="4000">Agregar</button>
                         </div>
+
                         <div class="producto">
-                            <img src="BonoBon.jpg" alt="Cookie de Bon o Bon" />
-                            <div class="badge-promo">APLICA EN LA PROMO</div>
-                            <h3 style="font-family: 'Averia Serif Libre', serif;">Bon o Bon</h3>
-                            <p style="font-family: 'roboto', roboto;">Masa de vainilla con chispas blancas, rellenas de un Bon o Bon.</p>
-                            <span class="precio" data-id="15">$2.100</span>
-                            <p class="stock" data-id="15"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="15" data-nombre="Cookie de Bon o Bon" data-precio="2100" data-oferta="true">Agregar</button>
+                            <img src="BonoBons.jpg" alt="Cookie de Bon o Bon" />
+                            <h3>Bon o Bon</h3>
+                            <p>Masa de vainilla con chispas blancas, rellenas de un Bon o Bon.</p>
+                            <span class="precio" data-id="15">$4.000</span>
+                            <p class="stock" data-id="15"></p>
+                            <button class="btn-agregar" data-id="15" data-nombre="Cookie de Bon o Bon" data-precio="4000">Agregar</button>
                         </div>
+
                         <div class="producto">
-                            <img src="Malvaviscoychoco.jpg" alt="Cookie de Malvadisco y Choco" />
-                            <h3 style="font-family: 'Averia Serif Libre', serif;">Malvavisco y choco</h3>
-                            <p style="font-family: 'roboto', roboto;">Masa de vainilla y chipas negras, rellenas de malvavisco y chocolate.</p>
-                            <span class="precio" data-id="16">$1.900</span>
-                            <p class="stock" data-id="16"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="16" data-nombre="Cookie de Malvavisco y Choco" data-precio="1900">Agregar</button>
+                            <img src="Malvaviscoychocos.jpg" alt="Cookie de Malvadisco y Choco" />
+                            <h3>Malvavisco y choco</h3>
+                            <p>Masa de vainilla y chipas negras, rellenas de malvavisco y chocolate.</p>
+                            <span class="precio" data-id="16">$3.000</span>
+                            <p class="stock" data-id="16"></p>
+                            <button class="btn-agregar" data-id="16" data-nombre="Cookie de Malvavisco y Choco" data-precio="3000">Agregar</button>
                         </div>
+
                         <div class="producto">
-                            <img src="franui.jpg" alt="Cookie de Franui/Frutillas Congeladas" />
-                            <h3 style="font-family: 'Averia Serif Libre', serif;">Franui/Frutillas Congeladas</h3>
-                            <p style="font-family: 'roboto', roboto;">Masa de vainilla con choco negro y blanco, rellena y decorada con franui.</p>
-                            <span class="precio" data-id="17">$2.300</span>
-                            <p class="stock" data-id="17"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="17" data-nombre="Cookie de Franui/Frutillas Congeladas" data-precio="2300">Agregar</button>
+                            <img src="franuis.jpg" alt="Cookie de Franui/Frutillas Congeladas" />
+                            <h3>Franui/Frutillas Congeladas</h3>
+                            <p>Masa de vainilla con choco negro y blanco, rellena y decorada con franui.</p>
+                            <span class="precio" data-id="17">$4.500</span>
+                            <p class="stock" data-id="17"></p>
+                            <button class="btn-agregar" data-id="17" data-nombre="Cookie de Franui/Frutillas Congeladas" data-precio="4.500">Agregar</button>
                         </div>
+
                         <div class="producto">
-                            <img src="kinder.jpg" alt="Cookie de Kinder" />
-                            <h3 style="font-family: 'Averia Serif Libre', serif;">Cookie de Kinder</h3>
-                            <p style="font-family: 'roboto', roboto;">Masa de vainilla con choco negro y blanco. Rellena de kinder, nutella y chocolate. Decorada con chocolate semi amargo por arriba y una barrita kinder en el centro.</p>
-                            <span class="precio" data-id="18">$2.400</span>
-                            <p class="stock" data-id="18"></p> <!-- 👈 Acá aparecerá "Stock: X" -->
-                            <button class="btn-agregar" data-id="18" data-nombre="Cookie de Kinder" data-precio="2400">Agregar</button>
+                            <img src="kinders.jpg" alt="Cookie de Kinder" />
+                            <h3>Cookie de Kinder</h3>
+                            <p>Masa de vainilla con choco negro y blanco. Rellena de kinder, nutella y chocolate. Decorada con chocolate semi amargo por arriba y una barrita kinder en el centro.</p>
+                            <span class="precio" data-id="18">$4.800</span>
+                            <p class="stock" data-id="18"></p>
+                            <button class="btn-agregar" data-id="18" data-nombre="Cookie de Kinder" data-precio="4800">Agregar</button>
                         </div>
                     </div>
                 </div>
+            </div>
+
         </section>
-
-
     </main>
-
-
-
 
     <!-- Icono WhatsApp -->
     <div id="WhatsAppBoton">
-        <a href="https://wa.me/5491167203462" title="WhatsApp"><img src="whats.jpg" alt="WhatsApp" /></a>
+        <a href="https://wa.me/5491167203462" title="WhatsApp">
+            <img src="whats.jpg" alt="WhatsApp" />
+        </a>
     </div>
 
     <!-- Icono carrito -->
@@ -771,7 +962,21 @@
         <button id="btnHacerPedido">Hacer pedido</button>
     </div>
 
+    <!-- Mascota cookie -->
+    <div class="cookie-mascota" title="¡Hola, soy tu cookie amiga!"></div>
+    <div class="cookie-chat-bubble" id="chat-bubble">¡Bienvenid@ a Cookies Love! 🍪</div>
+
     <script>
+        // --- MENÚ HAMBURGUESA ---
+        const menuToggle = document.getElementById("menu-toggle");
+        const navList = document.getElementById("nav-list");
+        menuToggle.addEventListener("click", () => {
+            navList.classList.toggle("active");
+        });
+    </script>
+
+    <script>
+        // --- CARRITO (SIN PROMO) ---
         const carrito = {};
         const btnHacerPedido = document.getElementById("btnHacerPedido");
         const carritoBoton = document.getElementById("carritoBoton");
@@ -783,18 +988,11 @@
             listaCarrito.innerHTML = "";
             let total = 0;
             let cantidadTotal = 0;
-            let cantidadOferta = 0;
-            let sumaOfertaNormal = 0;
 
             for (const id in carrito) {
                 const item = carrito[id];
                 total += item.precio * item.cantidad;
                 cantidadTotal += item.cantidad;
-
-                if (item.oferta) {
-                    cantidadOferta += item.cantidad;
-                    sumaOfertaNormal += item.precio * item.cantidad;
-                }
 
                 const li = document.createElement("li");
                 li.textContent = `x${item.cantidad} ${item.nombre} - $${(item.precio * item.cantidad).toFixed(2)}`;
@@ -809,18 +1007,6 @@
                 listaCarrito.appendChild(li);
             }
 
-            // Aplicar promo: cada 5 cookies de oferta salen $9.000
-            const combos = Math.floor(cantidadOferta / 5);
-            if (combos > 0) {
-                // Parte proporcional del costo normal de las cookies de oferta que forman parte de los combos
-                const normalShare = sumaOfertaNormal * ((combos * 5) / cantidadOferta);
-                total = total - normalShare + combos * 9000;
-
-                const promoLi = document.createElement("li");
-                promoLi.innerHTML = `<strong>Promo 5 Cookies x $9.000 aplicada 🎉</strong>`;
-                listaCarrito.appendChild(promoLi);
-            }
-
             contadorCarrito.textContent = cantidadTotal;
             contadorCarrito.style.display = cantidadTotal > 0 ? "inline-block" : "none";
             document.getElementById("totalCarrito").textContent = `Total: $${total.toFixed(2)}`;
@@ -833,27 +1019,22 @@
 
         document.querySelectorAll(".btn-agregar").forEach(boton => {
             boton.addEventListener("click", () => {
+                if (boton.disabled) return; // 🔒 seguridad extra
+
                 const id = boton.dataset.id;
                 const nombre = boton.dataset.nombre;
                 const precio = parseFloat(boton.dataset.precio);
-                // Detectar si este producto está marcado como parte de la oferta
-                const oferta = boton.dataset.oferta === "true";
 
-                if (carrito[id]) {
-                    carrito[id].cantidad++;
-                } else {
-                    carrito[id] = { nombre, precio, cantidad: 1, oferta };
-                }
+                if (carrito[id]) carrito[id].cantidad++;
+                else carrito[id] = { nombre, precio, cantidad: 1 };
+
                 actualizarCarrito();
             });
         });
 
+
         carritoBoton.addEventListener("click", () => {
-            if (carritoPanel.style.display === "flex") {
-                carritoPanel.style.display = "none";
-            } else {
-                carritoPanel.style.display = "flex";
-            }
+            carritoPanel.style.display = (carritoPanel.style.display === "flex") ? "none" : "flex";
         });
 
         btnHacerPedido.addEventListener("click", () => {
@@ -863,28 +1044,15 @@
             }
 
             let mensaje = "¡Hola! Quiero hacer un pedido:%0A";
-
             for (const id in carrito) {
                 const item = carrito[id];
                 mensaje += `x${item.cantidad} ${item.nombre} - $${(item.precio * item.cantidad).toFixed(2)}%0A`;
             }
 
-            let total = Object.values(carrito).reduce((acc, item) => acc + item.precio * item.cantidad, 0);
-
-            // Recalcular total con promo aplicada para el mensaje
-            let cantidadOferta = 0;
-            Object.values(carrito).forEach(item => {
-                if (item.oferta) cantidadOferta += item.cantidad;
-            });
-            const combos = Math.floor(cantidadOferta / 5);
-            if (combos > 0) {
-                mensaje += `%0A🎉 Oferta x5 cookies aplicada (${combos} combo/s)`;
-            }
-
+            const total = Object.values(carrito).reduce((acc, item) => acc + item.precio * item.cantidad, 0);
             mensaje += `%0ATotal: $${total.toFixed(2)}`;
 
-            const telefono = "5491167203462"; // Cambiar por tu número sin espacios ni signos
-
+            const telefono = "5491167203462";
             window.open(`https://wa.me/${telefono}?text=${mensaje}`, "_blank");
         });
 
@@ -892,18 +1060,16 @@
     </script>
 
     <script>
+        // --- ACORDEÓN ---
         document.querySelectorAll('.acordeon-titulo').forEach(boton => {
             boton.addEventListener('click', () => {
                 const contenido = boton.nextElementSibling;
                 const flecha = boton.querySelector('.flecha');
-
                 const abierto = contenido.style.display === 'block';
 
-                // Cierra todos los bloques (si querés que sea tipo acordeón)
                 document.querySelectorAll('.acordeon-contenido').forEach(c => c.style.display = 'none');
                 document.querySelectorAll('.flecha').forEach(f => f.classList.remove('abierta'));
 
-                // Abre este si estaba cerrado
                 if (!abierto) {
                     contenido.style.display = 'block';
                     flecha.classList.add('abierta');
@@ -915,37 +1081,105 @@
     <script>
         async function actualizarProductos() {
             try {
-                const response = await fetch("https://sheetdb.io/api/v1/kh3et5drhwxp9"); // Cambiá por tu URL real
+                const response = await fetch("https://sheetdb.io/api/v1/kh3et5drhwxp9");
                 const productos = await response.json();
 
                 productos.forEach(prod => {
-                    const precioElem = document.querySelector(`.precio[data-id="${prod.id}"]`);
-                    const stockElem = document.querySelector(`.stock[data-id="${prod.id}"]`);
-                    const btnAgregar = document.querySelector(`.btn-agregar[data-id="${prod.id}"]`);
+                    const id = String(prod.id);
 
-                    if (precioElem) precioElem.textContent = `$${prod.precio}`;
-                    if (stockElem) stockElem.textContent = `Stock: ${prod.stock}`;
-                    if (btnAgregar) btnAgregar.setAttribute('data-precio', prod.precio);
+                    const precioElem = document.querySelector(`.precio[data-id="${id}"]`);
+                    const stockElem = document.querySelector(`.stock[data-id="${id}"]`);
+                    const btnAgregar = document.querySelector(`.btn-agregar[data-id="${id}"]`);
+
+                    // Card contenedora (para opacidad y badge)
+                    const card = btnAgregar ? btnAgregar.closest(".producto") : null;
+
+                    // Parseos seguros
+                    const precioNum = Number(String(prod.precio).replace(/[^\d]/g, "")) || 0;
+                    const stockNum = Number(String(prod.stock).replace(/[^\d]/g, "")) || 0;
+
+                    // Precio
+                    if (precioElem && precioNum > 0) {
+                        precioElem.textContent = `$${precioNum}`;
+                        if (btnAgregar) btnAgregar.setAttribute("data-precio", String(precioNum));
+                    }
+
+                    // Stock texto base
+                    if (stockElem) {
+                        stockElem.textContent = `Stock: ${stockNum}`;
+                    }
+
+                    // Crear/obtener badge visual
+                    let badge = card ? card.querySelector(".stock-badge") : null;
+                    if (card && !badge) {
+                        badge = document.createElement("div");
+                        badge.className = "stock-badge";
+                        card.appendChild(badge);
+                    }
+
+                    // Reset de estados
+                    if (card) card.classList.remove("is-out");
+                    if (btnAgregar) {
+                        btnAgregar.disabled = false;
+                        btnAgregar.classList.remove("is-disabled");
+                        btnAgregar.textContent = "Agregar";
+                    }
+                    if (badge) {
+                        badge.style.display = "none";
+                        badge.classList.remove("stock-ok", "stock-low", "stock-out");
+                        badge.textContent = "";
+                    }
+
+                    // Lógica visual
+                    if (stockNum <= 0) {
+                        // SIN STOCK
+                        if (card) card.classList.add("is-out");
+
+                        if (btnAgregar) {
+                            btnAgregar.disabled = true;
+                            btnAgregar.classList.add("is-disabled");
+                            btnAgregar.textContent = "Sin stock";
+                        }
+
+                        if (stockElem) stockElem.textContent = "Sin stock";
+
+                        if (badge) {
+                            badge.style.display = "inline-block";
+                            badge.classList.add("stock-out");
+                            badge.textContent = "SIN STOCK";
+                        }
+
+                    } else if (stockNum <= 3) {
+                        // ÚLTIMOS
+                        if (stockElem) stockElem.textContent = `Últimos ${stockNum}`;
+
+                        if (badge) {
+                            badge.style.display = "inline-block";
+                            badge.classList.add("stock-low");
+                            badge.textContent = `ÚLTIMOS ${stockNum}`;
+                        }
+
+                    } else {
+                        // HAY STOCK NORMAL
+                        if (badge) {
+                            badge.style.display = "inline-block";
+                            badge.classList.add("stock-ok");
+                            badge.textContent = "HAY STOCK";
+                        }
+                    }
                 });
+
             } catch (error) {
                 console.error("Error al cargar los productos:", error);
             }
         }
 
         actualizarProductos();
+
     </script>
 
-    <!-- MASCOTA COOKIE -->
-    <div class="cookie-mascota" title="¡Hola, soy tu cookie amiga!"></div>
-
-    <div class="cookie-chat-bubble" id="chat-bubble">
-        ¡Bienvenid@ a Cookies Love! 🍪
-    </div>
-
-    <!-- Scripts -->
-    <script async src="https://www.instagram.com/embed.js"></script>
-
     <script>
+        // --- COOKIE CHAT ---
         const bubble = document.getElementById("chat-bubble");
 
         function mostrarMensajeCookie(texto) {
@@ -956,26 +1190,23 @@
             }, 6000);
         }
 
-        // Mostrar mensajes al entrar
         window.addEventListener("load", () => {
             const mensajes = [
                 "Con tu compra mayor a $10.000 te llevas tus cookies",
                 "Recordá mencionarnos en tu historia cuando retires tus cookies",
             ];
-
             let i = 0;
+
             function mostrarSiguiente() {
                 if (i < mensajes.length) {
                     mostrarMensajeCookie(mensajes[i]);
                     i++;
-                    setTimeout(mostrarSiguiente, 9000); // tiempo entre mensajes
+                    setTimeout(mostrarSiguiente, 9000);
                 }
             }
-
             mostrarSiguiente();
         });
 
-        // Mostrar mensaje al agregar producto al carrito
         document.addEventListener("click", function (e) {
             if (e.target.classList.contains("btn-agregar")) {
                 mostrarMensajeCookie("¡Agregaste una cookie riquísima al carrito!");
@@ -983,22 +1214,11 @@
         });
     </script>
 
-
-
-
-
-    </script>
-
-    </script>
-
-    </script>
-
     <script>
-        // Obtener el parámetro "busqueda" de la URL
+        // --- FILTRO POR URL ?busqueda= ---
         const params = new URLSearchParams(window.location.search);
         const filtro = params.get('busqueda')?.toLowerCase() || '';
 
-        // Si hay filtro, aplicarlo
         if (filtro) {
             const productos = document.querySelectorAll('.producto');
             productos.forEach(producto => {
@@ -1009,72 +1229,37 @@
             });
         }
     </script>
+
     <script>
+        // --- HASH SCROLL + ABRIR ACORDEÓN SI HACE FALTA ---
         window.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash;
             if (hash) {
                 const producto = document.querySelector(hash);
                 if (producto) {
-                    // Si está en un acordeón cerrado, abrilo
                     const contenedor = producto.closest('.acordeon-contenido');
                     if (contenedor && contenedor.style.display === 'none') {
                         contenedor.style.display = 'block';
+                        const flecha = contenedor.previousElementSibling?.querySelector('.flecha');
+                        if (flecha) flecha.classList.add('abierta');
                     }
-
-                    // Hacer scroll suave hacia el producto
                     setTimeout(() => {
                         producto.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }, 300);
                 }
             }
         });
-
-
-
-    </script>
-
-
-    </script>
-
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const hash = window.location.hash;
-            if (hash) {
-                const producto = document.querySelector(hash);
-                if (producto) {
-                    // Mostrar contenido si está en acordeón
-                    const contenedor = producto.closest('.acordeon-contenido');
-                    if (contenedor && contenedor.style.display === 'none') {
-                        contenedor.style.display = 'block';
-                    }
-
-                    // Scroll hacia el producto
-                    setTimeout(() => {
-                        producto.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }, 300);
-                }
-            }
-        });
-
-        // --- MENÚ HAMBURGUESA ---
-        const menuToggle = document.getElementById("menu-toggle");
-        const navList = document.getElementById("nav-list");
-
-        menuToggle.addEventListener("click", () => {
-            navList.classList.toggle("active");
-        });
-
     </script>
 
     <footer>
-        <p>&copy; 2025 Cookiies.lovee</p>
+        <p>&copy; 2026 Cookiies.lovee</p>
         <div class="redes">
             <a href="https://instagram.com/Cookiies.lovee">Instagram</a>
-            <a href="https://wa.me/543434571408">WhatsApp</a>
+            <a href="https://wa.me/5491167203462">WhatsApp</a>
             <a href="https://forms.gle/ZeRpw8yw6ZmgMMG39">Suscríbete</a>
         </div>
     </footer>
-
 </body>
 </html>
+
 
